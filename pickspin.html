@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>PickSpin — Random Picker &amp; Spin Wheel App | VKD Apps</title>
+<meta name="description" content="PickSpin is a random decision-making app by VKD Apps — spin wheel, lucky draw, name picker, and decision helper, for Android and iOS." />
+<link rel="canonical" href="https://vkdapps.com/pickspin.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="VKD Apps" />
+<meta property="og:title" content="PickSpin — Random Picker &amp; Spin Wheel App" />
+<meta property="og:description" content="Random Picker, Spin Wheel, Lucky Draw, and Name Picker in one elegant app." />
+<meta property="og:url" content="https://vkdapps.com/pickspin.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#050505" />
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/variables.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/animations.css" />
+</head>
+<body class="is-loading">
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="preloader" aria-hidden="true">
+  <div class="preloader-mark"><svg viewBox="0 0 64 64" fill="none"><path class="mark-stroke" d="M8 10 L32 54 L56 10" stroke="url(#pg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="pg" x1="0" y1="0" x2="64" y2="64"><stop offset="0%" stop-color="#cf9d4f"/><stop offset="100%" stop-color="#e6b567"/></linearGradient></defs></svg></div>
+  <div class="preloader-bar"><span></span></div>
+  <div class="preloader-label">VKD Apps</div>
+</div>
+<div class="noise-layer"></div>
+<div class="scroll-progress"></div>
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="VKD Apps home"><span class="brand-mark">V</span>VKD Apps</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="products.html" aria-current="page">Products</a>
+      <a href="technology.html">Technology</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-secondary btn-sm">Start Your Project</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="products.html">Products</a>
+  <a href="technology.html">Technology</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+</div>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="page-hero" style="position:relative; overflow:hidden;">
+    <div class="hero-mesh" style="opacity:.5;"></div>
+    <div class="container" style="position:relative;">
+      <a href="products.html" style="color:var(--text-secondary); font-size:var(--fs-small);" data-reveal>← All Products</a>
+      <div style="display:flex; align-items:center; gap:1rem; margin-top:var(--space-md);" data-reveal data-delay="60">
+        <div class="product-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-target"></use></svg></div>
+        <span class="eyebrow">Random Decision-Making App</span>
+      </div>
+      <h1 data-reveal data-delay="120">PickSpin</h1>
+      <p class="lead" data-reveal data-delay="180">Every decision made simple. PickSpin brings together a spin wheel, lucky draw, name picker, and general decision helper — designed for speed, fairness, and a bit of fun.</p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:var(--space-lg);" data-reveal data-delay="240">
+        <button class="btn btn-disabled" disabled aria-disabled="true">Download for Android</button>
+        <button class="btn btn-disabled" disabled aria-disabled="true">Download for iOS</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section-pad" style="padding-top:0;">
+    <div class="container">
+      <div class="grid grid-2" style="align-items:center; gap:var(--space-2xl);">
+        <div data-reveal>
+          <span class="eyebrow">Overview</span>
+          <h2 style="font-size:var(--fs-h2); margin-top:var(--space-sm);">Decisions, without the debate.</h2>
+        </div>
+        <div data-reveal data-delay="120">
+          <p style="color:var(--text-secondary); font-size:var(--fs-lead);">Whether you're picking a restaurant, running a giveaway, or choosing who goes first, PickSpin gives you a fast, unbiased, and genuinely satisfying way to decide — wrapped in an interface that feels premium rather than gimmicky.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section-pad" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Features</span>
+        <h2>Everything you need to decide.</h2>
+      </div>
+      <div class="grid grid-3" data-stagger>
+        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-dice"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Random Picker</h3><p style="color:var(--text-secondary);font-size:.9rem;">Instantly generate a fair, random result from any list.</p></div>
+        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-wheel"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Spin Wheel</h3><p style="color:var(--text-secondary);font-size:.9rem;">A satisfying animated wheel for group decisions and giveaways.</p></div>
+        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-trophy"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Lucky Draw</h3><p style="color:var(--text-secondary);font-size:.9rem;">Run raffles and lucky draws with transparent, verifiable results.</p></div>
+        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-tag"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Name Picker</h3><p style="color:var(--text-secondary);font-size:.9rem;">Pick names from a list for teams, turns, or assignments.</p></div>
+        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-compass"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Decision Helper</h3><p style="color:var(--text-secondary);font-size:.9rem;">Weigh options and let PickSpin nudge you toward a choice.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots placeholder -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow">Screenshots</span>
+        <h2>A closer look at PickSpin.</h2>
+      </div>
+      <div class="grid grid-3" data-stagger>
+        <div class="card" style="aspect-ratio:9/16; display:grid; place-items:center; color:var(--text-tertiary);">Screenshot Placeholder</div>
+        <div class="card" style="aspect-ratio:9/16; display:grid; place-items:center; color:var(--text-tertiary);">Screenshot Placeholder</div>
+        <div class="card" style="aspect-ratio:9/16; display:grid; place-items:center; color:var(--text-tertiary);">Screenshot Placeholder</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology & Platforms -->
+  <section class="section-pad" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="grid grid-2" style="gap:var(--space-2xl);">
+        <div data-reveal>
+          <span class="eyebrow">Technology</span>
+          <h2 style="font-size:var(--fs-h2); margin-top:var(--space-sm);">Built with Flutter</h2>
+          <p style="color:var(--text-secondary); margin-top:var(--space-sm);">A single Flutter codebase powers both the Android and iOS versions of PickSpin, ensuring consistent behavior and a smaller footprint for updates.</p>
+        </div>
+        <div data-reveal data-delay="120">
+          <span class="eyebrow">Platforms</span>
+          <h2 style="font-size:var(--fs-h2); margin-top:var(--space-sm);">Android &amp; iOS</h2>
+          <div style="display:flex; gap:.8rem; margin-top:var(--space-sm);">
+            <span class="badge">Android</span>
+            <span class="badge">iOS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Future Roadmap</span>
+        <h2>What's next for PickSpin.</h2>
+      </div>
+      <div class="timeline" data-reveal>
+        <div class="timeline-item"><div class="timeline-dot">1</div><h3>Custom Themes</h3><p>Personalize the spin wheel and picker interfaces.</p></div>
+        <div class="timeline-item"><div class="timeline-dot">2</div><h3>Shareable Results</h3><p>Share picks and draws directly to social platforms.</p></div>
+        <div class="timeline-item"><div class="timeline-dot">3</div><h3>History &amp; Favorites</h3><p>Save frequently used lists and past results.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad" style="background:var(--bg-secondary);">
+    <div class="container" style="max-width:820px;">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow">FAQ</span>
+        <h2>Common questions about PickSpin.</h2>
+      </div>
+      <div class="accordion" data-reveal>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Is PickSpin free to use?<span class="plus"></span></button>
+          <div class="accordion-panel"><div class="accordion-panel-inner">Pricing details will be available closer to launch on the Android and iOS app stores.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Can I create unlimited lists?<span class="plus"></span></button>
+          <div class="accordion-panel"><div class="accordion-panel-inner">Yes — PickSpin is designed to support as many custom lists as you need.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Does PickSpin work offline?<span class="plus"></span></button>
+          <div class="accordion-panel"><div class="accordion-panel-inner">Core picking and spinning features are designed to work without an internet connection.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand" style="margin-bottom:var(--space-sm);"><span class="brand-mark">V</span>VKD Apps</a>
+        <p style="max-width:32ch;">Premium software engineering for Android, iOS, and the web — built in India, for the world.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="technology.html">Technology</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="pickspin.html">PickSpin</a>
+        <a href="brainboost.html">BrainBoost</a>
+        <a href="rent-agreement-maker.html">Rent Agreement Maker</a>
+        <a href="flowcare.html">FlowCare</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> VKD Apps. All rights reserved.</span>
+      <div class="footer-social" aria-label="Social links"><a href="mailto:business@vkdapps.com" aria-label="Email">✉</a></div>
+    </div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://vkdapps.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://vkdapps.com/services.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vkdapps.com/products.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vkdapps.com/pickspin.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vkdapps.com/brainboost.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vkdapps.com/rent-agreement-maker.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vkdapps.com/flowcare.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vkdapps.com/about.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkdapps.com/technology.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkdapps.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vkdapps.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://vkdapps.com/terms-and-conditions.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://vkdapps.com/cookie-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://vkdapps.com/disclaimer.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+</urlset>
