@@ -38,10 +38,10 @@ h1, h2, h3, h4 {
   line-height: 1.12;
 }
 
-::selection { background: var(--accent-purple); color: #fff; }
+::selection { background: var(--accent); color: var(--bg-primary); }
 
 :focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--accent-bright);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -87,8 +87,8 @@ section { position: relative; }
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--accent-blue);
-  color: #fff;
+  background: var(--accent);
+  color: var(--bg-primary);
   padding: .75rem 1.25rem;
   z-index: 2000;
   border-radius: 0 0 var(--radius-sm) 0;

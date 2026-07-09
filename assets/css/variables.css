@@ -13,7 +13,7 @@
   /* Text — warm off-white / warm grays, not pure white/gray */
   --text-primary: #f4f2ec;
   --text-secondary: #96938a;
-  --text-tertiary: #5f5d57;
+  --text-tertiary: #7f7d79; /* meets WCAG AA (4.5:1+) at fs-micro/fs-small on all card/bg surfaces */
 
   /* Single accent — muted signal gold. Used sparingly: CTAs, key numerals, one word per headline. */
   --accent: #cf9d4f;
