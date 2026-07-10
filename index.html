@@ -23,14 +23,14 @@
 <meta name="twitter:description" content="Premium Android, iOS &amp; Web applications engineered for real-world impact." />
 <meta name="twitter:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
 
-<meta name="theme-color" content="#050505" />
+<meta name="theme-color" content="#000000" />
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 <link rel="manifest" href="manifest.json" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="assets/css/variables.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
@@ -58,13 +58,7 @@
 <div class="preloader" aria-hidden="true">
   <div class="preloader-mark">
     <svg viewBox="0 0 64 64" fill="none">
-      <path class="mark-stroke" d="M8 10 L32 54 L56 10" stroke="url(#pg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <defs>
-        <linearGradient id="pg" x1="0" y1="0" x2="64" y2="64">
-          <stop offset="0%" stop-color="#cf9d4f"/>
-          <stop offset="100%" stop-color="#e6b567"/>
-        </linearGradient>
-      </defs>
+      <path class="mark-stroke" d="M8 10 L32 54 L56 10" stroke="#ffa41c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </div>
   <div class="preloader-bar"><span></span></div>
@@ -186,7 +180,71 @@
         <h2>Applications we've built and shipped.</h2>
         <p>A growing portfolio of consumer applications, each engineered with the same premium standard.</p>
       </div>
-      <div class="grid grid-4" data-stagger>
+      <div class="carousel" data-carousel data-reveal>
+        <div class="carousel-viewport">
+          <div class="carousel-track" data-carousel-track>
+
+            <div class="carousel-slide" data-carousel-slide>
+              <div>
+                <div class="carousel-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-target"></use></svg></div>
+                <span class="eyebrow">#1 Best Spinner Game</span>
+                <h3>PickSpin</h3>
+                <p>Decision Spinner, Spin Battle multiplayer, and Math Challenge — free on Android and iOS.</p>
+                <a href="pickspin.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
+              </div>
+              <img class="carousel-shot" src="assets/images/screenshots/pickspin-2.png" alt="PickSpin Decision Spinner screen" loading="eager" width="480" height="640" />
+            </div>
+
+            <div class="carousel-slide" data-carousel-slide>
+              <div>
+                <div class="carousel-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-puzzle"></use></svg></div>
+                <span class="eyebrow">#1 Memory, Focus &amp; IQ Training</span>
+                <h3>BrainBoost</h3>
+                <p>32+ AI-powered games plus a personal AI Coach — free on iOS, Android coming soon.</p>
+                <a href="brainboost.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
+              </div>
+              <img class="carousel-shot" src="assets/images/screenshots/brainboost-2.png" alt="BrainBoost AI Coach screen" loading="eager" width="480" height="640" />
+            </div>
+
+            <div class="carousel-slide" data-carousel-slide>
+              <div>
+                <div class="carousel-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-file-text"></use></svg></div>
+                <span class="eyebrow">Create, Scan &amp; Manage Leases</span>
+                <h3>Rent Agreement Maker</h3>
+                <p>AI clause suggestions, offline PDF export, and rent reminders — free on iOS, Android coming soon.</p>
+                <a href="rent-agreement-maker.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
+              </div>
+              <img class="carousel-shot" src="assets/images/screenshots/rent-agreement-2.png" alt="Rent Agreement Maker AI health scanner screen" loading="eager" width="480" height="640" />
+            </div>
+
+            <div class="carousel-slide" data-carousel-slide>
+              <div>
+                <div class="carousel-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-droplet"></use></svg></div>
+                <span class="eyebrow">Coming Soon</span>
+                <h3>FlowCare</h3>
+                <p>A period tracker with cycle tracking, health insights, and gentle reminders — in development.</p>
+                <a href="flowcare.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
+              </div>
+              <div class="device-mock" style="margin-inline:auto;">
+                <div class="device-frame">
+                  <div class="device-notch"></div>
+                  <div class="device-screen">
+                    <div class="device-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-droplet"></use></svg></div>
+                    <div class="device-skeleton"><span></span><span></span><span></span></div>
+                    <span class="device-caption">Coming Soon</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button class="carousel-nav prev" data-carousel-prev aria-label="Previous product">‹</button>
+        <button class="carousel-nav next" data-carousel-next aria-label="Next product">›</button>
+        <div class="carousel-dots" data-carousel-dots></div>
+      </div>
+
+      <div class="grid grid-4" data-stagger style="margin-top:var(--space-xl);">
         <a href="pickspin.html" class="card product-card tilt">
           <div class="product-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-target"></use></svg></div>
           <h3>PickSpin</h3>

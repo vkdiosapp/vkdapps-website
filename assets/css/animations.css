@@ -45,26 +45,26 @@
   color: var(--text-tertiary);
 }
 
-/* ---------- Hero background — static, cheap, no blur animation ---------- */
+/* ---------- Hero background — solid black + technical grid lines, no color gradients ---------- */
 .hero-mesh {
   position: absolute;
   inset: 0;
   overflow: hidden;
   z-index: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(207,157,79,.10), transparent 65%),
-    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-  background-size: auto, 64px 64px, 64px 64px;
-  background-position: center, center, center;
+  background-color: var(--bg-primary);
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center;
   mask-image: linear-gradient(to bottom, black, transparent 85%);
   -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
 .hero-glow {
   position: absolute;
-  width: 420px; height: 420px;
+  width: 6px; height: 6px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(207,157,79,.14), transparent 72%);
+  background: var(--accent);
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: left .3s var(--ease-out), top .3s var(--ease-out);
