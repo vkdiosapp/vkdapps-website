@@ -106,24 +106,38 @@
   <!-- 1. HERO -->
   <section class="hero" style="padding-top:var(--nav-h); min-height:100svh; display:flex; align-items:center; overflow:hidden;">
     <div class="hero-mesh"></div>
-    <div class="hero-glow"></div>
     <div class="float-el" style="width:8px;height:8px;top:22%;left:12%;"></div>
     <div class="float-el" style="width:5px;height:5px;top:65%;left:20%;animation-delay:1.5s;"></div>
-    <div class="float-el" style="width:6px;height:6px;top:40%;left:85%;animation-delay:3s;"></div>
     <div class="float-el" style="width:4px;height:4px;top:78%;left:75%;animation-delay:.8s;"></div>
     <div class="container" style="position:relative; z-index:1; padding-block:var(--space-2xl);">
-      <div data-reveal>
-        <span class="eyebrow">Premium Software Engineering, from India to the World</span>
-      </div>
-      <h1 class="shimmer" style="font-size:var(--fs-hero); margin-top:var(--space-md); max-width:1000px;" data-reveal data-delay="80">
-        Building Software That People Love.
-      </h1>
-      <p class="lead" style="font-size:var(--fs-lead); color:var(--text-secondary); max-width:620px; margin-top:var(--space-md);" data-reveal data-delay="160">
-        VKD Apps designs and engineers premium Android, iOS, and web applications — where meticulous craft meets real-world reliability, for individuals, startups, and enterprises alike.
-      </p>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:var(--space-lg);" data-reveal data-delay="240">
-        <span class="magnetic"><a href="products.html" class="btn btn-primary">Explore Products</a></span>
-        <span class="magnetic"><a href="contact.html" class="btn btn-secondary">Start Your Project</a></span>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div data-reveal>
+            <span class="eyebrow">Premium Software Engineering, from India to the World</span>
+          </div>
+          <h1 style="font-size:var(--fs-hero); margin-top:var(--space-md);" data-reveal data-delay="80">
+            Building Software That People Love.
+          </h1>
+          <p class="lead" style="font-size:var(--fs-lead); color:var(--text-secondary); max-width:560px; margin-top:var(--space-md);" data-reveal data-delay="160">
+            VKD Apps designs and engineers premium Android, iOS, and web applications — where meticulous craft meets real-world reliability, for individuals, startups, and enterprises alike.
+          </p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:var(--space-lg);" data-reveal data-delay="240">
+            <a href="products.html" class="btn btn-primary">Explore Products</a>
+            <a href="contact.html" class="btn btn-secondary">Start Your Project</a>
+          </div>
+        </div>
+
+        <div class="hero-showcase" aria-hidden="true">
+          <div class="hero-phone hero-phone-left">
+            <div class="hero-phone-inner"><img src="assets/images/app/flowcare-1.jpg" alt="" width="640" height="1422" loading="eager" /></div>
+          </div>
+          <div class="hero-phone hero-phone-right">
+            <div class="hero-phone-inner"><img src="assets/images/app/rent-agreement-1.jpg" alt="" width="640" height="1387" loading="eager" /></div>
+          </div>
+          <div class="hero-phone hero-phone-front">
+            <div class="hero-phone-inner"><img src="assets/images/app/brainboost-1.jpg" alt="" width="640" height="1387" loading="eager" /></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -192,7 +206,7 @@
                 <p>Decision Spinner, Spin Battle multiplayer, and Math Challenge — free on Android and iOS.</p>
                 <a href="pickspin.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
               </div>
-              <img class="carousel-shot" src="assets/images/screenshots/pickspin-2.png" alt="PickSpin Decision Spinner screen" loading="eager" width="480" height="640" />
+              <img class="carousel-shot" src="assets/images/app/pickspin-2.jpg" alt="PickSpin Spin Battle multiplayer round with two players and the spinner wheel" loading="eager" width="700" height="1514" />
             </div>
 
             <div class="carousel-slide" data-carousel-slide>
@@ -203,7 +217,7 @@
                 <p>32+ AI-powered games plus a personal AI Coach — free on iOS, Android coming soon.</p>
                 <a href="brainboost.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
               </div>
-              <img class="carousel-shot" src="assets/images/screenshots/brainboost-2.png" alt="BrainBoost AI Coach screen" loading="eager" width="480" height="640" />
+              <img class="carousel-shot" src="assets/images/app/brainboost-1.jpg" alt="BrainBoost exercises screen with the Count Rush game and a reaction-time trend chart" loading="lazy" width="640" height="1387" />
             </div>
 
             <div class="carousel-slide" data-carousel-slide>
@@ -214,7 +228,7 @@
                 <p>AI clause suggestions, offline PDF export, and rent reminders — free on iOS, Android coming soon.</p>
                 <a href="rent-agreement-maker.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
               </div>
-              <img class="carousel-shot" src="assets/images/screenshots/rent-agreement-2.png" alt="Rent Agreement Maker AI health scanner screen" loading="eager" width="480" height="640" />
+              <img class="carousel-shot" src="assets/images/app/rent-agreement-2.jpg" alt="Rent Agreement Maker AI Agreement Health Scanner screen" loading="lazy" width="640" height="1387" />
             </div>
 
             <div class="carousel-slide" data-carousel-slide>
@@ -225,16 +239,7 @@
                 <p>A period tracker with cycle tracking, health insights, and gentle reminders — in development.</p>
                 <a href="flowcare.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
               </div>
-              <div class="device-mock" style="margin-inline:auto;">
-                <div class="device-frame">
-                  <div class="device-notch"></div>
-                  <div class="device-screen">
-                    <div class="device-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-droplet"></use></svg></div>
-                    <div class="device-skeleton"><span></span><span></span><span></span></div>
-                    <span class="device-caption">Coming Soon</span>
-                  </div>
-                </div>
-              </div>
+              <img class="carousel-shot" src="assets/images/app/flowcare-1.jpg" alt="FlowCare home screen showing the current period day, next ovulation, and daily symptom logging" loading="lazy" width="640" height="1422" />
             </div>
 
           </div>

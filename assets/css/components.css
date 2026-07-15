@@ -580,3 +580,57 @@
   transition: background var(--dur-fast), transform var(--dur-fast);
 }
 .carousel-dot.active { background: var(--accent); transform: scale(1.3); }
+
+/* ---------- Hero product showcase (real screens, layered in depth) ---------- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: var(--space-xl); } }
+
+.hero-showcase {
+  position: relative;
+  perspective: 1600px;
+  height: clamp(380px, 44vw, 560px);
+}
+/* A single soft brand light behind the devices — light, not ornament. */
+.hero-showcase::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 78%; aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(228, 0, 43, .30), rgba(228, 0, 43, 0) 68%);
+  filter: blur(26px);
+  pointer-events: none;
+}
+/* Outer element carries position + depth; inner carries the float, so the
+   two transforms never fight each other. */
+.hero-phone { position: absolute; left: 50%; top: 50%; transform-style: preserve-3d; }
+.hero-phone-inner {
+  border-radius: 20px;
+  border: 1px solid var(--border-strong);
+  overflow: hidden;
+  animation: heroFloat 9s ease-in-out infinite;
+  will-change: transform;
+}
+.hero-phone-inner img { display: block; width: 100%; height: auto; }
+.hero-phone-front { width: clamp(158px, 19vw, 212px); z-index: 3; transform: translate(-50%, -50%) rotateY(-10deg) translateZ(60px); }
+.hero-phone-left  { width: clamp(124px, 15vw, 170px); z-index: 2; transform: translate(-142%, -54%) rotateY(18deg) translateZ(-30px); }
+.hero-phone-right { width: clamp(124px, 15vw, 170px); z-index: 2; transform: translate(42%, -54%) rotateY(-22deg) translateZ(-30px); }
+.hero-phone-left .hero-phone-inner { animation-delay: -3s; }
+.hero-phone-right .hero-phone-inner { animation-delay: -6s; }
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-phone-inner { animation: none; } }
+/* On small screens keep one device, centred — never cramped, never overflowing. */
+@media (max-width: 640px) {
+  .hero-phone-left, .hero-phone-right { display: none; }
+  .hero-showcase { height: 420px; }
+  .hero-phone-front { width: clamp(190px, 54vw, 250px); transform: translate(-50%, -50%) rotateY(-8deg); }
+}
