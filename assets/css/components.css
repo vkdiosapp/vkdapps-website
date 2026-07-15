@@ -12,7 +12,7 @@
   font-size: var(--fs-micro);
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-bright);
 }
 .eyebrow::before {
   content: "";
@@ -21,7 +21,7 @@
   background: var(--accent);
 }
 
-.gradient-text { color: var(--accent); }
+.gradient-text { color: var(--accent-bright); }
 
 .section-head { max-width: 700px; margin-bottom: var(--space-xl); }
 .section-head.center { margin-inline: auto; text-align: center; }
@@ -45,9 +45,9 @@
 }
 .btn-primary {
   background: var(--accent);
-  color: var(--bg-primary);
+  color: #fff;
 }
-.btn-primary:hover { background: var(--accent-bright); }
+.btn-primary:hover { background: #c4001f; }
 .btn-secondary {
   background: var(--bg-card);
   color: var(--text-primary);
@@ -480,8 +480,12 @@
   z-index: 1;
 }
 @keyframes deviceFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: perspective(1400px) rotateY(-7deg) rotateX(2deg) translateY(0); }
+  50% { transform: perspective(1400px) rotateY(-5deg) rotateX(1deg) translateY(-12px); }
+}
+/* Reduced-motion (or no animation): rest with a gentle, static depth rather than dead-flat */
+@media (prefers-reduced-motion: reduce) {
+  .device-mock { transform: perspective(1400px) rotateY(-6deg) rotateX(1.5deg); }
 }
 
 /* ---------- Real screenshot image (App Store / Play Store) ---------- */

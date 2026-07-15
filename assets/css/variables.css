@@ -18,11 +18,11 @@
   --text-secondary: #aaaaaa;
   --text-tertiary: #999999;
 
-  /* Single accent — used only for primary CTAs, eyebrow labels, and key numerals */
-  --accent: #ffa41c;
-  --accent-bright: #ffb84d;
-  --accent-dim: rgba(255, 164, 28, 0.12);
-  --accent-border: rgba(255, 164, 28, 0.4);
+  /* Single accent — the VKD brand red, used only for primary CTAs, eyebrow labels, and key numerals */
+  --accent: #e4002b;
+  --accent-bright: #ff4d5e;
+  --accent-dim: rgba(228, 0, 43, 0.14);
+  --accent-border: rgba(255, 77, 94, 0.4);
 
   /* Flat fills (kept as "gradient-*" names for backward compatibility with
      existing component rules, but intentionally solid — no gradients). */
