@@ -95,6 +95,13 @@
   color: var(--accent-bright);
   font-family: var(--font-display);
 }
+/* The real company logo replaces the letter mark — round, unframed. */
+img.brand-mark {
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  object-fit: contain;
+}
 
 .nav-links { display: flex; align-items: center; gap: 2.25rem; }
 .nav-links a {
@@ -614,8 +621,20 @@
 
 .hero-showcase {
   position: relative;
-  perspective: 1600px;
+  perspective: 1400px;
   height: clamp(380px, 44vw, 560px);
+}
+/* The stage rotates as a whole — JS feeds --rx/--ry from the cursor, so the
+   devices read as one object in real space rather than three flat pictures. */
+/* No CSS transition here on purpose: a transition on `transform` does not
+   reliably re-fire when only the custom properties feeding it change, which
+   leaves the stage stuck at identity. The easing is damped in JS instead. */
+.hero-stage {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateY(var(--rx, 0deg)) rotateX(var(--ry, 0deg));
+  will-change: transform;
 }
 /* A single soft brand light behind the devices — light, not ornament. */
 .hero-showcase::before {

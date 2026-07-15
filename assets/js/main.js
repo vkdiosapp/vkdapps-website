@@ -162,17 +162,39 @@
     });
   });
 
-  /* ---------- Hero glow follows mouse ---------- */
-  safe("hero-glow", () => {
-    const heroGlow = document.querySelector(".hero-glow");
+  /* ---------- Hero: devices parallax with the cursor ---------- */
+  safe("hero-parallax", () => {
+    const stage = document.querySelector(".hero-stage");
     const heroSection = document.querySelector(".hero");
-    if (heroGlow && heroSection && window.matchMedia("(hover: hover)").matches) {
-      heroSection.addEventListener("mousemove", (e) => {
-        const rect = heroSection.getBoundingClientRect();
-        heroGlow.style.left = `${e.clientX - rect.left}px`;
-        heroGlow.style.top = `${e.clientY - rect.top}px`;
-      });
-    }
+    if (!stage || !heroSection) return;
+    if (!window.matchMedia("(hover: hover)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let raf = null;
+    let targetX = 0, targetY = 0;
+    let curX = 0, curY = 0;
+
+    const tick = () => {
+      // Damped follow: eases toward the cursor and back to centre on exit.
+      curX += (targetX - curX) * 0.08;
+      curY += (targetY - curY) * 0.08;
+      stage.style.setProperty("--rx", `${curX.toFixed(2)}deg`);
+      stage.style.setProperty("--ry", `${curY.toFixed(2)}deg`);
+      if (Math.abs(targetX - curX) > 0.01 || Math.abs(targetY - curY) > 0.01) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        raf = null;
+      }
+    };
+    const start = () => { if (!raf) raf = requestAnimationFrame(tick); };
+
+    heroSection.addEventListener("mousemove", (e) => {
+      const r = heroSection.getBoundingClientRect();
+      targetX = ((e.clientX - r.left) / r.width - 0.5) * 20;
+      targetY = -((e.clientY - r.top) / r.height - 0.5) * 12;
+      start();
+    });
+    heroSection.addEventListener("mouseleave", () => { targetX = 0; targetY = 0; start(); });
   });
 
   /* ---------- Card tilt ---------- */
