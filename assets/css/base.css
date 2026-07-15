@@ -22,6 +22,9 @@ body {
 }
 
 img, svg, video { display: block; max-width: 100%; }
+/* Without this, the HTML height attribute is used verbatim and images render
+   stretched. Paired with width/height attributes it still reserves space (no CLS). */
+img { height: auto; }
 
 a { color: inherit; text-decoration: none; }
 
