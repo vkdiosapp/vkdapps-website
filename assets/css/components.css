@@ -278,22 +278,6 @@ img.brand-mark {
 .timeline-item h3 { font-size: var(--fs-h3); margin-bottom: .4rem; }
 .timeline-item p { color: var(--text-secondary); }
 
-/* ---------- Testimonials ---------- */
-.testimonial-card { display: flex; flex-direction: column; gap: var(--space-md); }
-.testimonial-quote { font-size: 1.05rem; color: var(--text-primary); font-family: var(--font-alt); }
-.testimonial-person { display: flex; align-items: center; gap: .8rem; margin-top: auto; }
-.avatar {
-  width: 42px; height: 42px; border-radius: 50%;
-  background: var(--bg-secondary);
-  border: 1px solid var(--accent-border);
-  color: var(--accent-bright);
-  display: grid; place-items: center;
-  font-weight: 600; font-size: .8rem;
-  font-family: var(--font-display);
-}
-.testimonial-person .name { font-weight: 600; font-size: .92rem; }
-.testimonial-person .role { color: var(--text-tertiary); font-size: var(--fs-micro); }
-
 /* ---------- FAQ Accordion ---------- */
 .accordion { border-top: 1px solid var(--border-subtle); }
 .accordion-item { border-bottom: 1px solid var(--border-subtle); }
@@ -516,89 +500,16 @@ img.brand-mark {
 }
 
 /* ---------- Reveal animation base ---------- */
-[data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
-[data-reveal].in-view { opacity: 1; transform: translateY(0); }
+/* Scoped to .js (set on <html> before the stylesheets load). Without
+   JavaScript nothing hides the content, so it is simply visible rather than
+   stranded at opacity:0 forever. Motion enhances; it never gates. */
+.js [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+.js [data-reveal].in-view { opacity: 1; transform: translateY(0); }
 
 /* ---------- Page hero shared ---------- */
 .page-hero { padding-top: calc(var(--nav-h) + var(--space-3xl)); padding-bottom: var(--space-2xl); }
 .page-hero h1 { font-size: var(--fs-h1); margin-top: var(--space-md); max-width: 900px; }
 .page-hero p.lead { font-size: var(--fs-lead); color: var(--text-secondary); margin-top: var(--space-md); max-width: 640px; }
-
-/* ---------- Product showcase carousel ---------- */
-.carousel {
-  position: relative;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-card);
-  overflow: hidden;
-}
-.carousel-viewport { overflow: hidden; }
-.carousel-track {
-  display: flex;
-  transition: transform var(--dur-slow) var(--ease-out);
-}
-.carousel-slide {
-  flex: 0 0 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: var(--space-xl);
-  padding: var(--space-2xl) var(--space-xl);
-}
-@media (max-width: 800px) {
-  .carousel-slide { grid-template-columns: 1fr; gap: var(--space-lg); padding: var(--space-xl) var(--space-lg); text-align: center; }
-  .carousel-slide .carousel-shot { order: -1; }
-}
-.carousel-slide .carousel-glyph {
-  width: 52px; height: 52px;
-  border-radius: var(--radius-md);
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
-  display: grid; place-items: center;
-  color: var(--accent);
-  margin-bottom: var(--space-sm);
-}
-.carousel-slide .carousel-glyph svg { width: 24px; height: 24px; }
-@media (max-width: 800px) { .carousel-slide .carousel-glyph { margin-inline: auto; } }
-.carousel-slide h3 { font-size: var(--fs-h2); margin-bottom: var(--space-sm); }
-.carousel-slide p { color: var(--text-secondary); font-size: var(--fs-lead); margin-bottom: var(--space-md); }
-.carousel-shot {
-  width: 100%;
-  max-width: 260px;
-  margin-inline: auto;
-  border-radius: 18px;
-  border: 1px solid var(--border-strong);
-  display: block;
-}
-.carousel-nav {
-  position: absolute;
-  top: 50%; transform: translateY(-50%);
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-strong);
-  display: grid; place-items: center;
-  color: var(--text-primary);
-  z-index: 2;
-  transition: background var(--dur-fast), border-color var(--dur-fast);
-}
-.carousel-nav:hover { background: var(--bg-card-hover); border-color: var(--accent-border); }
-.carousel-nav.prev { left: var(--space-md); }
-.carousel-nav.next { right: var(--space-md); }
-@media (max-width: 640px) { .carousel-nav { display: none; } }
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: .5rem;
-  padding-bottom: var(--space-lg);
-}
-.carousel-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--border-strong);
-  transition: background var(--dur-fast), transform var(--dur-fast);
-}
-.carousel-dot.active { background: var(--accent); transform: scale(1.3); }
 
 /* ---------- Product rows — one product, one idea, alternating sides ---------- */
 .product-row {

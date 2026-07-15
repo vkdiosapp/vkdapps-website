@@ -10,24 +10,6 @@
     try { fn(); } catch (err) { console.error(`[main.js] ${name} failed:`, err); }
   };
 
-  /* ---------- Preloader ---------- */
-  safe("preloader", () => {
-    const preloader = document.querySelector(".preloader");
-    const finishLoad = () => {
-      if (!preloader) return;
-      preloader.classList.add("done");
-      document.body.classList.remove("is-loading");
-      setTimeout(() => preloader.remove(), 600);
-    };
-    if (document.readyState === "complete") {
-      setTimeout(finishLoad, 250);
-    } else {
-      window.addEventListener("load", () => setTimeout(finishLoad, 250));
-    }
-    // Hard safety net: never let a stuck preloader block the page.
-    setTimeout(finishLoad, 3000);
-  });
-
   /* ---------- Reveal on scroll (with hard fallback) ---------- */
   safe("reveal", () => {
     document.querySelectorAll("[data-stagger]").forEach((group) => {
@@ -195,67 +177,6 @@
       start();
     });
     heroSection.addEventListener("mouseleave", () => { targetX = 0; targetY = 0; start(); });
-  });
-
-  /* ---------- Card tilt ---------- */
-  safe("card-tilt", () => {
-    if (!window.matchMedia("(hover: hover)").matches) return;
-    document.querySelectorAll(".tilt").forEach((card) => {
-      card.addEventListener("mousemove", (e) => {
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(800px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-3px)`;
-      });
-      card.addEventListener("mouseleave", () => { card.style.transform = ""; });
-    });
-  });
-
-  /* ---------- Product showcase carousel ---------- */
-  safe("product-carousel", () => {
-    document.querySelectorAll("[data-carousel]").forEach((root) => {
-      const track = root.querySelector("[data-carousel-track]");
-      const slides = [...root.querySelectorAll("[data-carousel-slide]")];
-      const dotsWrap = root.querySelector("[data-carousel-dots]");
-      if (!track || !slides.length) return;
-
-      let index = 0;
-      let timer = null;
-
-      const dots = slides.map((_, i) => {
-        const dot = document.createElement("button");
-        dot.className = "carousel-dot";
-        dot.setAttribute("aria-label", `Show slide ${i + 1}`);
-        dot.addEventListener("click", () => goTo(i, true));
-        dotsWrap?.appendChild(dot);
-        return dot;
-      });
-
-      function render() {
-        track.style.transform = `translateX(-${index * 100}%)`;
-        dots.forEach((d, i) => d.classList.toggle("active", i === index));
-      }
-      function goTo(i, userInitiated) {
-        index = (i + slides.length) % slides.length;
-        render();
-        if (userInitiated) restart();
-      }
-      function next() { goTo(index + 1); }
-      function restart() {
-        if (timer) clearInterval(timer);
-        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          timer = setInterval(next, 4200);
-        }
-      }
-
-      root.querySelector("[data-carousel-prev]")?.addEventListener("click", () => goTo(index - 1, true));
-      root.querySelector("[data-carousel-next]")?.addEventListener("click", () => goTo(index + 1, true));
-      root.addEventListener("mouseenter", () => timer && clearInterval(timer));
-      root.addEventListener("mouseleave", restart);
-
-      render();
-      restart();
-    });
   });
 
   /* ---------- Set active nav link ---------- */
