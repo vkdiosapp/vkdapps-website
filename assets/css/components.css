@@ -163,7 +163,17 @@ img.brand-mark {
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
-  .nav-cta .btn-secondary { display: none; }
+  /* Keep a persistent primary CTA on mobile instead of hiding it behind the menu. */
+  .nav-cta .btn-secondary {
+    background: var(--accent);
+    color: #fff;
+    border-color: transparent;
+  }
+}
+/* On the narrowest phones, drop the nav wordmark to the logo so the CTA always
+   fits. Footer wordmark is untouched. */
+@media (max-width: 420px) {
+  .site-nav .brand .brand-name { display: none; }
 }
 
 /* ---------- Cards ---------- */
