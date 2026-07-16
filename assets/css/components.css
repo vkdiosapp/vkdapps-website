@@ -545,7 +545,7 @@ img.brand-mark {
 .hero-showcase {
   position: relative;
   perspective: 1400px;
-  height: clamp(380px, 44vw, 560px);
+  height: clamp(410px, 47vw, 620px);
 }
 /* The stage rotates as a whole — JS feeds --rx/--ry from the cursor, so the
    devices read as one object in real space rather than three flat pictures. */
@@ -567,8 +567,9 @@ img.brand-mark {
   width: 78%; aspect-ratio: 1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(228, 0, 43, .30), rgba(228, 0, 43, 0) 68%);
-  filter: blur(26px);
+  width: 88%;
+  background: radial-gradient(circle, rgba(228, 0, 43, .38), rgba(228, 0, 43, 0) 66%);
+  filter: blur(34px);
   pointer-events: none;
 }
 /* Outer element carries position + depth; inner carries the float, so the
@@ -582,9 +583,9 @@ img.brand-mark {
   will-change: transform;
 }
 .hero-phone-inner img { display: block; width: 100%; height: auto; }
-.hero-phone-front { width: clamp(158px, 19vw, 212px); z-index: 3; transform: translate(-50%, -50%) rotateY(-10deg) translateZ(60px); }
-.hero-phone-left  { width: clamp(124px, 15vw, 170px); z-index: 2; transform: translate(-142%, -54%) rotateY(18deg) translateZ(-30px); }
-.hero-phone-right { width: clamp(124px, 15vw, 170px); z-index: 2; transform: translate(42%, -54%) rotateY(-22deg) translateZ(-30px); }
+.hero-phone-front { width: clamp(176px, 21vw, 250px); z-index: 3; transform: translate(-50%, -50%) rotateY(-10deg) translateZ(60px); }
+.hero-phone-left  { width: clamp(134px, 16vw, 190px); z-index: 2; transform: translate(-138%, -54%) rotateY(18deg) translateZ(-30px); }
+.hero-phone-right { width: clamp(134px, 16vw, 190px); z-index: 2; transform: translate(38%, -54%) rotateY(-22deg) translateZ(-30px); }
 .hero-phone-left .hero-phone-inner { animation-delay: -3s; }
 .hero-phone-right .hero-phone-inner { animation-delay: -6s; }
 @keyframes heroFloat {

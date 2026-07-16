@@ -36,25 +36,27 @@
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-alt: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --fs-hero: clamp(2.25rem, 4.2vw + 1rem, 4.25rem);
-  --fs-h1: clamp(1.9rem, 2.8vw + 1rem, 2.75rem);
-  --fs-h2: clamp(1.5rem, 1.8vw + 1rem, 2rem);
-  --fs-h3: clamp(1.1rem, 1vw + 1rem, 1.4rem);
-  --fs-lead: clamp(1rem, 0.4vw + 1rem, 1.15rem);
+  /* Type scale — large by intent. The brand asks for large headings and a
+     strong hierarchy; a compact scale reads as a dashboard, not a product. */
+  --fs-hero: clamp(2.5rem, 5vw + 1rem, 5.25rem);
+  --fs-h1: clamp(2.1rem, 3.4vw + 1rem, 3.75rem);
+  --fs-h2: clamp(1.75rem, 2.4vw + 1rem, 2.75rem);
+  --fs-h3: clamp(1.15rem, 1.2vw + 1rem, 1.6rem);
+  --fs-lead: clamp(1.05rem, 0.6vw + 1rem, 1.3rem);
   --fs-body: 1rem;
-  --fs-small: 0.875rem;
-  --fs-micro: 0.75rem;
+  --fs-small: 0.9rem;
+  --fs-micro: 0.78rem;
 
-  /* Spacing scale — compact density */
+  /* Spacing scale — generous: whitespace is structure, not emptiness. */
   --space-3xs: 0.25rem;
   --space-2xs: 0.5rem;
   --space-xs: 0.75rem;
   --space-sm: 1rem;
-  --space-md: 1.25rem;
-  --space-lg: 2rem;
-  --space-xl: 2.75rem;
-  --space-2xl: 3.75rem;
-  --space-3xl: 5rem;
+  --space-md: 1.35rem;
+  --space-lg: 2.25rem;
+  --space-xl: 3.25rem;
+  --space-2xl: 5rem;
+  --space-3xl: 7.5rem;
 
   /* Layout */
   --container-max: 1280px;
