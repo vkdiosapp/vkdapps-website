@@ -3,15 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Page Not Found — VKD Apps</title>
-<meta name="robots" content="noindex, nofollow" />
+<title>404 — Page Not Found | VKD Apps</title>
+<meta name="robots" content="noindex, follow" />
 <meta name="theme-color" content="#000000" />
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
 <link rel="manifest" href="manifest.json" />
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
 <script>document.documentElement.classList.add("js");</script>
+
 <link rel="stylesheet" href="assets/css/variables.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/components.css" />
@@ -19,23 +23,32 @@
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
-<div class="noise-layer"></div>
+
 <header class="site-nav is-scrolled">
   <div class="container nav-inner">
-    <a href="index.html" class="brand" aria-label="VKD Apps home"><img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" /><span class="brand-name">VKD Apps</span></a>
+    <a href="index.html" class="brand" aria-label="VKD Apps Home">
+      <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="28" height="28" />
+      <span>VKD Apps</span>
+    </a>
   </div>
 </header>
-<main id="main" style="min-height:100svh; display:flex; align-items:center; position:relative; overflow:hidden;">
-  <div class="hero-mesh" style="opacity:.5;"></div>
-  <div class="container" style="position:relative; text-align:center;">
-    <div class="stat-number" style="font-size:clamp(4rem,12vw,9rem);">404</div>
-    <h1 style="font-size:var(--fs-h2); margin-top:var(--space-sm);">This page took a wrong turn.</h1>
-    <p style="color:var(--text-secondary); font-size:var(--fs-lead); max-width:520px; margin:var(--space-sm) auto 0;">The page you're looking for doesn't exist or may have moved. Let's get you back on track.</p>
-    <div style="margin-top:var(--space-lg);">
-      <a href="index.html" class="btn btn-primary">Back to Home</a>
+
+<main id="main" style="min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-inline: 1.5rem; padding-top: var(--nav-h);">
+  <div class="container" style="max-width: 600px;">
+    <span class="eyebrow">404</span>
+    <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; letter-spacing: -0.04em; margin-top: var(--space-xs); color: #ffffff;">
+      Page Not Found
+    </h1>
+    <p style="color: var(--text-secondary); font-size: var(--fs-lead); margin-top: var(--space-md); line-height: 1.6;">
+      The requested page could not be located.
+    </p>
+    <div style="margin-top: var(--space-xl); display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <a href="index.html" class="btn btn-primary">Return to Overview</a>
+      <a href="services.html" class="btn btn-secondary">View Capabilities</a>
     </div>
   </div>
 </main>
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>

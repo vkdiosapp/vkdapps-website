@@ -3,25 +3,36 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Products — PickSpin, BrainBoost &amp; More | VKD Apps</title>
-<meta name="description" content="Explore VKD Apps' consumer applications: PickSpin, BrainBoost, Rent Agreement Maker, and the upcoming FlowCare period tracker." />
+<title>Custom Products &amp; Solutions | VKD Apps</title>
+<meta name="description" content="VKD Apps builds custom digital products to your exact requirements. High-performance iOS and Android software engineered from zero." />
 <link rel="canonical" href="https://vkdapps.com/products.html" />
+
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="VKD Apps" />
-<meta property="og:title" content="Products — VKD Apps" />
-<meta property="og:description" content="PickSpin, BrainBoost, Rent Agreement Maker, and FlowCare — premium apps built by VKD Apps." />
+<meta property="og:title" content="Custom Products &amp; Solutions — VKD Apps" />
+<meta property="og:description" content="Custom product engineering for iOS &amp; Android tailored to your business specifications." />
 <meta property="og:url" content="https://vkdapps.com/products.html" />
-<meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
-<meta name="twitter:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
+
 <meta name="theme-color" content="#000000" />
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 <link rel="manifest" href="manifest.json" />
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<script>document.documentElement.classList.add("js");</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Inconsolata:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<script>
+  document.documentElement.classList.add("js");
+  (function(){
+    var t = localStorage.getItem("vkd_theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+
 <link rel="stylesheet" href="assets/css/variables.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/components.css" />
@@ -29,29 +40,50 @@
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
-<div class="noise-layer"></div>
-<div class="scroll-progress"></div>
+
+<!-- Navigation Header -->
 <header class="site-nav">
   <div class="container nav-inner">
-    <a href="index.html" class="brand" aria-label="VKD Apps home"><img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" /><span class="brand-name">VKD Apps</span></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="products.html" aria-current="page">Products</a>
+    <a href="index.html" class="brand" aria-label="VKD Apps Home">
+      <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="28" height="28" />
+      <span>VKD Apps</span>
+    </a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="index.html">Overview</a>
+      <a href="services.html">Capabilities</a>
       <a href="technology.html">Technology</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
       <a href="contact.html" class="btn btn-secondary btn-sm">Start Your Project</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="products.html">Products</a>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+  <a href="index.html">Overview</a>
+  <a href="services.html">Capabilities</a>
   <a href="technology.html">Technology</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
@@ -59,94 +91,90 @@
 </div>
 
 <main id="main">
+  <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <span class="eyebrow" data-reveal>Our Products</span>
-      <h1 data-reveal data-delay="80">Applications built to the same <span class="gradient-text">premium standard</span> as our client work.</h1>
-      <p class="lead" data-reveal data-delay="160">Every VKD Apps product ships with the same discipline we bring to enterprise engagements — considered design, dependable performance, and long-term support.</p>
+      <span class="eyebrow" data-reveal>Custom Builds</span>
+      <h1 data-reveal data-delay="70">
+        Any product. Built to your exact requirements.
+      </h1>
+      <p class="lead" data-reveal data-delay="140">
+        We do not force your business into pre-packaged templates. We engineer bespoke mobile applications and software products tailored to your operational requirements.
+      </p>
     </div>
   </section>
 
-  <section class="section-pad" style="padding-top:0;">
+  <!-- Capabilities Grid -->
+  <section class="section-pad" style="padding-top: 0;">
     <div class="container">
-      <h2 class="sr-only">Our applications</h2>
-      <div class="grid grid-2" data-stagger>
+      <div class="grid grid-3" data-stagger>
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-apple"></use></svg></div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #ffffff;">iOS Applications</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Native Swift and SwiftUI software designed for iPhone and iPad with Apple HIG fluency and store approval readiness.</p>
+        </div>
 
-        <a href="pickspin.html" class="card product-card" style="min-height:260px;">
-          <div class="product-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-target"></use></svg></div>
-          <h3>PickSpin</h3>
-          <p>A casual spin wheel game packed with mini games, math challenges, and party fun.</p>
-          <div class="tags"><span>Decision Spinner</span><span>Spin Battle</span><span>Math Challenge</span></div>
-          <div class="tags"><span>Android</span><span>iOS</span></div>
-          <span class="card-link gradient-text">View product <span class="arrow">→</span></span>
-        </a>
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-android"></use></svg></div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #ffffff;">Android Applications</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Modern Kotlin and Jetpack Compose mobile systems built for performance across all Android devices.</p>
+        </div>
 
-        <a href="brainboost.html" class="card product-card" style="min-height:260px;">
-          <div class="product-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-puzzle"></use></svg></div>
-          <h3>BrainBoost</h3>
-          <p>32+ AI-powered games across Memory, Math, Reaction, Visual, and Logic, plus an AI Coach for personalized training.</p>
-          <div class="tags"><span>Memory</span><span>Logic</span><span>AI Coach</span></div>
-          <div class="tags"><span>iOS</span><span>Android Soon</span></div>
-          <span class="card-link gradient-text">View product <span class="arrow">→</span></span>
-        </a>
-
-        <a href="rent-agreement-maker.html" class="card product-card" style="min-height:260px;">
-          <div class="product-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-file-text"></use></svg></div>
-          <h3>Rent Agreement Maker</h3>
-          <p>Create, scan, and manage rental agreements with AI clause suggestions, offline PDF export, and rent reminders.</p>
-          <div class="tags"><span>AI Clauses</span><span>Offline</span><span>PDF Export</span></div>
-          <div class="tags"><span>iOS</span><span>Android Soon</span></div>
-          <span class="card-link gradient-text">View product <span class="arrow">→</span></span>
-        </a>
-
-        <a href="flowcare.html" class="card product-card" style="min-height:260px;">
-          <div class="product-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-droplet"></use></svg></div>
-          <h3>FlowCare <span class="badge badge-soon" style="margin-left:.4rem;">Coming Soon</span></h3>
-          <p>A period tracker application designed with care — cycle tracking, personalized health insights, gentle notifications, and a beautiful calendar.</p>
-          <div class="tags"><span>Cycle Tracking</span><span>Health Insights</span><span>Calendar</span></div>
-          <div class="tags"><span>Android</span><span>iOS</span></div>
-          <span class="card-link gradient-text">View product <span class="arrow">→</span></span>
-        </a>
-
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-refresh"></use></svg></div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #ffffff;">Full App Redesign</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Complete UI/UX and architectural overhaul of existing apps to modernize performance and elevate user retention.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section-pad" style="background:var(--bg-secondary);">
+  <!-- CTA -->
+  <section class="section-pad">
     <div class="container">
-      <div class="glass" style="padding:var(--space-2xl) var(--space-lg); text-align:center;" data-reveal>
-        <h2 style="font-size:var(--fs-h1);">Have an idea for the next great app?</h2>
-        <p style="color:var(--text-secondary); font-size:var(--fs-lead); max-width:560px; margin:var(--space-md) auto 0;">We bring the same craft from our own products to client engagements of every size.</p>
-        <div style="margin-top:var(--space-lg);">
-          <span class="magnetic"><a href="contact.html" class="btn btn-primary">Start Your Project</a></span>
+      <div class="glass" style="padding: var(--space-2xl) var(--space-lg); text-align: center;" data-reveal>
+        <h2 style="font-size: var(--fs-h1); color: #ffffff;">Have a product in mind?</h2>
+        <p style="color: var(--text-secondary); font-size: var(--fs-lead); max-width: 600px; margin: var(--space-md) auto 0; line-height: 1.6;">
+          Tell us about your specifications and let's engineer your software.
+        </p>
+        <div style="margin-top: var(--space-xl);">
+          <a href="contact.html" class="btn btn-primary">Start Your Project</a>
         </div>
       </div>
     </div>
   </section>
 </main>
 
+<!-- Footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="brand" style="margin-bottom:var(--space-sm);"><img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" />VKD Apps</a>
-        <p style="max-width:32ch;">Premium software engineering for Android, iOS, and the web — built in India, for the world.</p>
+        <a href="index.html" class="brand" style="margin-bottom: var(--space-sm);">
+          <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="28" height="28" />
+          <span>VKD Apps</span>
+        </a>
+        <p style="max-width: 32ch; line-height: 1.6; font-size: 0.9rem;">
+          Specialized software engineering studio. High-performance Android &amp; iOS applications, custom builds, and full app redesigns.
+        </p>
       </div>
+
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <a href="services.html">iOS Development</a>
+        <a href="services.html">Android Development</a>
+        <a href="services.html">Custom Product Builds</a>
+        <a href="services.html">Full App Redesign</a>
+      </div>
+
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="about.html">About</a>
+        <a href="services.html">Capabilities</a>
         <a href="technology.html">Technology</a>
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="footer-col">
-        <h4>Products</h4>
-        <a href="pickspin.html">PickSpin</a>
-        <a href="brainboost.html">BrainBoost</a>
-        <a href="rent-agreement-maker.html">Rent Agreement Maker</a>
-        <a href="flowcare.html">FlowCare</a>
-      </div>
+
       <div class="footer-col">
         <h4>Legal</h4>
         <a href="privacy-policy.html">Privacy Policy</a>
@@ -155,13 +183,15 @@
         <a href="disclaimer.html">Disclaimer</a>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> VKD Apps. All rights reserved.</span>
-      <div class="footer-social" aria-label="Social links"><a href="mailto:business@vkdapps.com" aria-label="Email">✉</a></div>
+      <span>&copy; <span data-year>2026</span> VKD Apps. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="mailto:vkdiosapp@gmail.com">vkdiosapp@gmail.com</a>
+      </div>
     </div>
   </div>
 </footer>
-<button class="back-to-top" aria-label="Back to top">↑</button>
 
 <script src="assets/js/main.js"></script>
 </body>

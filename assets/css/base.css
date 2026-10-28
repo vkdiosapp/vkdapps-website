@@ -1,18 +1,26 @@
 /* ============================================================
-   VKD Apps — Base / Reset
+   VKD Apps — Minimal Base Styles (Tesla Aesthetic)
    ============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  color-scheme: dark light;
 }
 
-html, body { background: var(--bg-primary); }
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
 
 body {
   font-family: var(--font-body);
-  color: var(--text-primary);
   line-height: 1.6;
   font-size: var(--fs-body);
   overflow-x: hidden;
@@ -21,105 +29,103 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-img, svg, video { display: block; max-width: 100%; }
+img, svg, video, canvas {
+  display: block;
+  max-width: 100%;
+}
 
-/* Visually hidden but available to screen readers (e.g. section headings that
-   keep the h1 -> h2 -> h3 order correct without a visible label). */
+img {
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-wrap: balance;
+  color: var(--text-primary);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+section {
+  position: relative;
+}
+
+.section-pad {
+  padding-block: var(--space-2xl);
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding-block: var(--space-xl);
+  }
+}
+
 .sr-only {
   position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
 }
-/* Without this, the HTML height attribute is used verbatim and images render
-   stretched. Paired with width/height attributes it still reserves space (no CLS). */
-img { height: auto; }
 
-a { color: inherit; text-decoration: none; }
-
-button, input, textarea, select { font: inherit; color: inherit; }
-
-button { cursor: pointer; background: none; border: none; }
-
-ul, ol { list-style: none; }
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.08;
-}
-
-::selection { background: var(--accent); color: var(--bg-primary); }
-
-:focus-visible {
-  outline: 2px solid var(--accent-bright);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-.container {
-  max-width: var(--container-max);
-  margin-inline: auto;
-  padding-inline: var(--container-pad);
-}
-
-section { position: relative; }
-
-.section-pad { padding-block: var(--space-3xl); }
-
-@media (max-width: 768px) {
-  .section-pad { padding-block: var(--space-2xl); }
-}
-
-/* Noise texture overlay */
-.noise-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Scroll progress bar */
-.scroll-progress {
-  position: fixed;
-  top: 0; left: 0;
-  height: 3px;
-  width: 0%;
-  background: var(--gradient-primary);
-  z-index: 1000;
-  transition: width .1s linear;
-}
-
-/* Skip link for a11y */
 .skip-link {
   position: absolute;
-  left: -9999px;
-  top: 0;
-  background: var(--accent);
-  color: var(--bg-primary);
-  padding: .75rem 1.25rem;
-  z-index: 2000;
-  border-radius: 0 0 var(--radius-sm) 0;
+  top: -100px;
+  left: 1rem;
+  background: #ffffff;
+  color: #000000;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  z-index: 9999;
+  transition: top 0.2s ease-out;
 }
-.skip-link:focus { left: 0; }
 
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: var(--radius-full); }
-::-webkit-scrollbar-thumb:hover { background: var(--bg-card-hover); }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
+.skip-link:focus {
+  top: 1rem;
 }

@@ -1,5 +1,9 @@
+/* ============================================================
+   VKD Apps — Contact Form Handler with WebMCP Integration
+   ============================================================ */
 (() => {
   "use strict";
+
   const form = document.getElementById("contactForm");
   if (!form) return;
 
@@ -7,34 +11,21 @@
   const errorMsg = document.getElementById("formError");
   const errorText = document.getElementById("formErrorText");
   const submitBtn = form.querySelector('button[type="submit"]');
-  const submitLabel = submitBtn ? submitBtn.textContent : "Send Message";
+  const originalLabel = submitBtn ? submitBtn.textContent : "Send Inquiry";
 
-  const focusPanel = (el) => {
-    el.hidden = false;
-    el.setAttribute("tabindex", "-1");
-    el.focus();
+  const showError = (message) => {
+    if (!errorMsg || !errorText) return;
+    errorText.textContent = message;
+    errorMsg.hidden = false;
+    errorMsg.focus();
   };
 
-  const showError = (text) => {
-    if (!errorMsg) return;
-    if (errorText) errorText.textContent = text;
-    focusPanel(errorMsg);
-  };
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
+  const clearError = () => {
     if (errorMsg) errorMsg.hidden = true;
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending…";
-    }
+  };
 
-    const payload = Object.fromEntries(new FormData(form).entries());
+  async function handleSubmission(formData) {
+    const payload = Object.fromEntries(formData.entries());
 
     try {
       const res = await fetch("/api/contact", {
@@ -42,33 +33,79 @@
         headers: { "content-type": "application/json" },
         body: JSON.stringify(payload),
       });
+
       const data = await res.json().catch(() => ({}));
 
       if (res.ok && data.ok) {
-        form.hidden = true;
-        if (errorMsg) errorMsg.hidden = true;
-        if (successMsg) focusPanel(successMsg);
-        return;
+        return { success: true };
       }
 
       if (data.code === "not_configured") {
-        showError(
-          "Our contact form isn't connected yet — we're sorry. Please email business@vkdapps.com directly and we'll reply within 1–2 business days."
-        );
-      } else {
-        showError(
-          (data.error || "Something went wrong.") +
-            " Please try again, or email business@vkdapps.com directly."
-        );
+        return {
+          success: false,
+          error: "Online submission is currently undergoing maintenance. Please email vkdiosapp@gmail.com directly."
+        };
       }
+
+      return {
+        success: false,
+        error: data.error || "Unable to send your inquiry right now. Please try again or email vkdiosapp@gmail.com."
+      };
     } catch {
-      showError(
-        "We couldn't reach our server. Please check your connection and try again, or email business@vkdapps.com directly."
+      return {
+        success: false,
+        error: "Network connection error. Please email vkdiosapp@gmail.com directly."
+      };
+    }
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      if (e.agentInvoked && typeof e.respondWith === "function") {
+        e.respondWith(Promise.resolve("Form validation failed. Please provide all required fields."));
+      }
+      return;
+    }
+
+    clearError();
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+    }
+
+    const formData = new FormData(form);
+    const submissionPromise = handleSubmission(formData);
+
+    if (e.agentInvoked && typeof e.respondWith === "function") {
+      e.respondWith(
+        submissionPromise.then((result) => {
+          if (result.success) {
+            return "Project consultation inquiry received successfully. VKD Apps will follow up shortly.";
+          }
+          return `Inquiry failed: ${result.error}`;
+        })
       );
+    }
+
+    try {
+      const result = await submissionPromise;
+      if (result.success) {
+        form.hidden = true;
+        if (successMsg) {
+          successMsg.hidden = false;
+          successMsg.focus();
+        }
+      } else {
+        showError(result.error);
+      }
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.textContent = submitLabel;
+        submitBtn.textContent = originalLabel;
       }
     }
   });

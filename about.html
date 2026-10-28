@@ -3,25 +3,36 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>About VKD Apps — Our Story, Mission &amp; Engineering Culture</title>
-<meta name="description" content="Learn about VKD Apps — our story, mission, vision, values, and the engineering culture behind our premium Android, iOS, and web applications." />
+<title>About VKD Apps — Engineering Culture &amp; Philosophy</title>
+<meta name="description" content="VKD Apps is a specialized software engineering studio. We partner with founders, businesses, and enterprises to build iOS and Android apps, custom products, and full redesigns." />
 <link rel="canonical" href="https://vkdapps.com/about.html" />
+
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="VKD Apps" />
 <meta property="og:title" content="About VKD Apps" />
-<meta property="og:description" content="Our story, mission, vision, and engineering culture." />
+<meta property="og:description" content="Our engineering culture, values, and focus." />
 <meta property="og:url" content="https://vkdapps.com/about.html" />
-<meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
-<meta name="twitter:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
+
 <meta name="theme-color" content="#000000" />
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 <link rel="manifest" href="manifest.json" />
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<script>document.documentElement.classList.add("js");</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Inconsolata:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<script>
+  document.documentElement.classList.add("js");
+  (function(){
+    var t = localStorage.getItem("vkd_theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+
 <link rel="stylesheet" href="assets/css/variables.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/components.css" />
@@ -29,29 +40,50 @@
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
-<div class="noise-layer"></div>
-<div class="scroll-progress"></div>
+
+<!-- Navigation Header -->
 <header class="site-nav">
   <div class="container nav-inner">
-    <a href="index.html" class="brand" aria-label="VKD Apps home"><img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" /><span class="brand-name">VKD Apps</span></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="products.html">Products</a>
+    <a href="index.html" class="brand" aria-label="VKD Apps Home">
+      <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="28" height="28" />
+      <span>VKD Apps</span>
+    </a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="index.html">Overview</a>
+      <a href="services.html">Capabilities</a>
       <a href="technology.html">Technology</a>
       <a href="about.html" aria-current="page">About</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
       <a href="contact.html" class="btn btn-secondary btn-sm">Start Your Project</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="products.html">Products</a>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+  <a href="index.html">Overview</a>
+  <a href="services.html">Capabilities</a>
   <a href="technology.html">Technology</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
@@ -59,138 +91,129 @@
 </div>
 
 <main id="main">
+  <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <span class="eyebrow" data-reveal>About VKD Apps</span>
-      <h1 data-reveal data-delay="80">A studio built around <span class="gradient-text">craft, not shortcuts</span>.</h1>
-      <p class="lead" data-reveal data-delay="160">VKD Apps is a software engineering studio based in India, building premium Android, iOS, and web applications for individuals, startups, businesses, and enterprises around the world.</p>
+      <span class="eyebrow" data-reveal>About the Studio</span>
+      <h1 data-reveal data-delay="70">
+        Crafted engineering. Uncompromising execution.
+      </h1>
+      <p class="lead" data-reveal data-delay="140">
+        VKD Apps is a dedicated software development company. We do not position ourselves as a generic agency or a marketplace of freelancers. We are an engineering group that builds high-performance mobile and web software.
+      </p>
     </div>
   </section>
 
-  <section class="section-pad" style="padding-top:0;">
+  <!-- Mission & Ethos -->
+  <section class="section-pad" style="padding-top: 0;">
     <div class="container">
-      <div class="grid grid-2" style="align-items:center; gap:var(--space-2xl);">
+      <div class="grid grid-2" style="align-items: center; gap: var(--space-2xl);">
         <div data-reveal>
-          <span class="eyebrow">Our Story</span>
-          <h2 style="font-size:var(--fs-h2); margin-top:var(--space-sm);">Why VKD Apps exists.</h2>
+          <span class="eyebrow">Our Philosophy</span>
+          <h2 style="font-size: var(--fs-h2); margin-top: var(--space-xs); margin-bottom: var(--space-md); color: var(--text-primary);">
+            We build what matters, stripped of unnecessary complexity.
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: var(--space-md);">
+            Modern digital products suffer from bloated dependencies, fragile frameworks, and superficial marketing claims. We believe in engineering simplicity: clear data models, fast native interactions, robust error recovery, and clean, legible codebases.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.65;">
+            Whether you need a new application for iOS and Android, a custom product built to strict enterprise requirements, or a complete overhaul of a legacy mobile app, you collaborate directly with the engineers who write your code.
+          </p>
         </div>
-        <div data-reveal data-delay="120">
-          <p style="color:var(--text-secondary); font-size:var(--fs-lead); margin-bottom:var(--space-md);">VKD Apps was founded on a simple frustration: too much software is shipped fast and forgotten — functional, but forgettable. We set out to build a studio where every product, whether for a single founder or a large organization, receives the same level of care.</p>
-          <p style="color:var(--text-secondary);">That philosophy now shapes everything we do, from our own consumer apps to the custom platforms we build for clients across industries and geographies.</p>
+
+        <div class="card" data-reveal data-delay="120" style="padding: var(--space-xl);">
+          <h3 style="font-size: 1.35rem; margin-bottom: var(--space-md); color: var(--text-primary);">
+            Core Principles
+          </h3>
+          <ul style="display: flex; flex-direction: column; gap: 0.9rem; color: var(--text-secondary); font-size: 0.95rem;">
+            <li><strong>Engineered for Native:</strong> We leverage native platform capabilities (Swift &amp; Kotlin) and optimized Flutter architectures.</li>
+            <li><strong>Requirements-Driven:</strong> Every feature solves an explicit user or business need without bloat.</li>
+            <li><strong>Quality Over Speed:</strong> Thorough testing, strict code reviews, and automated CI/CD checks before store deployment.</li>
+            <li><strong>100% Client Ownership:</strong> Full IP rights, repositories, and documentation delivered to you.</li>
+            <li><strong>Long-Term Stability:</strong> Architectures planned for zero technical debt and smooth future enhancements.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-pad" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="grid grid-2" data-stagger>
-        <div class="card">
-          <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-target"></use></svg></div>
-          <h3 style="font-size:var(--fs-h3); margin-bottom:.6rem;">Our Mission</h3>
-          <p style="color:var(--text-secondary);">To build premium software that is simple, elegant, reliable, and engineered to solve real-world problems — with no compromise on craft.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-compass"></use></svg></div>
-          <h3 style="font-size:var(--fs-h3); margin-bottom:.6rem;">Our Vision</h3>
-          <p style="color:var(--text-secondary);">To become the studio that individuals, startups, and enterprises trust with their most important digital products, across every platform that matters.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-pad">
+  <!-- Transparent Engagement -->
+  <section class="section-pad" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="section-head" data-reveal>
-        <span class="eyebrow">Our Values</span>
-        <h2>What guides every decision we make.</h2>
+        <span class="eyebrow">Engagement</span>
+        <h2>Why companies partner with us</h2>
+        <p>Direct communication, transparent milestones, and zero agency middlemen.</p>
       </div>
-      <div class="grid grid-4" data-stagger>
-        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-check-badge"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Craft Over Speed</h3><p style="color:var(--text-secondary);font-size:.9rem;">We'd rather ship later and ship right.</p></div>
-        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-search"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Attention to Detail</h3><p style="color:var(--text-secondary);font-size:.9rem;">The small things are the product, not decoration.</p></div>
-        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-handshake"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Honest Partnership</h3><p style="color:var(--text-secondary);font-size:.9rem;">Transparent communication, from scoping to delivery.</p></div>
-        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-ruler"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Engineering Discipline</h3><p style="color:var(--text-secondary);font-size:.9rem;">Clean architecture that holds up over time.</p></div>
+
+      <div class="grid grid-3" data-stagger>
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-braces"></use></svg></div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-primary);">Direct Engineering</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">You work directly with lead engineers. Architectural questions and scope decisions are resolved immediately without layers of account managers.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-check-badge"></use></svg></div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-primary);">Predictable Milestones</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Clear phase blueprints with exact deliverable timelines. We share weekly working builds on TestFlight and Google Play Internal Testing.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-shield"></use></svg></div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-primary);">Integrity in Code</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">We do not use proprietary locking libraries or hidden templates. You own clean, self-contained repositories that any engineer can maintain.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section-pad" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="grid grid-2" style="align-items:center; gap:var(--space-2xl);">
-        <div data-reveal>
-          <span class="eyebrow">Development Philosophy</span>
-          <h2 style="font-size:var(--fs-h2); margin-top:var(--space-sm);">Fewer features, sharper execution.</h2>
-        </div>
-        <div data-reveal data-delay="120">
-          <p style="color:var(--text-secondary); font-size:var(--fs-lead);">We favor depth over breadth — a smaller set of features executed exceptionally well, rather than a long list of half-finished ones. This philosophy shapes both our own products and the client software we deliver.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- CTA -->
   <section class="section-pad">
     <div class="container">
-      <div class="grid grid-2" style="align-items:center; gap:var(--space-2xl);">
-        <div data-reveal>
-          <span class="eyebrow">Engineering Culture</span>
-          <h2 style="font-size:var(--fs-h2); margin-top:var(--space-sm);">Ownership, not tickets.</h2>
-        </div>
-        <div data-reveal data-delay="120">
-          <p style="color:var(--text-secondary); font-size:var(--fs-lead);">Every engineer at VKD Apps takes ownership of what they build — from architecture decisions to the final pixel. We believe accountable engineering produces better software than assembly-line development.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-pad" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">Future Roadmap</span>
-        <h2>Where VKD Apps is headed.</h2>
-      </div>
-      <div class="timeline" data-reveal>
-        <div class="timeline-item"><div class="timeline-dot">1</div><h3>Expanding Our Product Line</h3><p>Launching FlowCare and future consumer applications.</p></div>
-        <div class="timeline-item"><div class="timeline-dot">2</div><h3>Deeper AI Integration</h3><p>Bringing practical AI capabilities into more of our client and consumer products.</p></div>
-        <div class="timeline-item"><div class="timeline-dot">3</div><h3>Enterprise Partnerships</h3><p>Growing our work with larger organizations and government clients.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-pad">
-    <div class="container">
-      <div class="glass" style="padding:var(--space-2xl) var(--space-lg); text-align:center;" data-reveal>
-        <h2 style="font-size:var(--fs-h1);">Want to work with us?</h2>
-        <p style="color:var(--text-secondary); font-size:var(--fs-lead); max-width:560px; margin:var(--space-md) auto 0;">We're always open to conversations about ambitious, well-considered software.</p>
-        <div style="margin-top:var(--space-lg);">
-          <span class="magnetic"><a href="contact.html" class="btn btn-primary">Get in Touch</a></span>
+      <div class="glass" style="padding: var(--space-2xl) var(--space-lg); text-align: center;" data-reveal>
+        <h2 style="font-size: var(--fs-h1); margin-top: var(--space-xs); color: var(--text-primary);">Let's build your product</h2>
+        <p style="color: var(--text-secondary); font-size: var(--fs-lead); max-width: 600px; margin: var(--space-md) auto 0; line-height: 1.6;">
+          Contact our team at <a href="mailto:vkdiosapp@gmail.com" style="color: var(--text-primary); text-decoration: underline;">vkdiosapp@gmail.com</a> or submit an inquiry through our project form.
+        </p>
+        <div style="margin-top: var(--space-xl);">
+          <a href="contact.html" class="btn btn-primary">Start Your Project</a>
         </div>
       </div>
     </div>
   </section>
 </main>
 
+<!-- Footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="brand" style="margin-bottom:var(--space-sm);"><img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" />VKD Apps</a>
-        <p style="max-width:32ch;">Premium software engineering for Android, iOS, and the web — built in India, for the world.</p>
+        <a href="index.html" class="brand" style="margin-bottom: var(--space-sm);">
+          <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="28" height="28" />
+          <span>VKD Apps</span>
+        </a>
+        <p style="max-width: 32ch; line-height: 1.6; font-size: 0.9rem;">
+          Specialized software engineering studio. High-performance Android &amp; iOS applications, custom builds, and full app redesigns.
+        </p>
       </div>
+
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <a href="services.html">iOS Development</a>
+        <a href="services.html">Android Development</a>
+        <a href="services.html">Custom Product Builds</a>
+        <a href="services.html">Full App Redesign</a>
+      </div>
+
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="about.html">About</a>
+        <a href="services.html">Capabilities</a>
         <a href="technology.html">Technology</a>
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="footer-col">
-        <h4>Products</h4>
-        <a href="pickspin.html">PickSpin</a>
-        <a href="brainboost.html">BrainBoost</a>
-        <a href="rent-agreement-maker.html">Rent Agreement Maker</a>
-        <a href="flowcare.html">FlowCare</a>
-      </div>
+
       <div class="footer-col">
         <h4>Legal</h4>
         <a href="privacy-policy.html">Privacy Policy</a>
@@ -199,13 +222,15 @@
         <a href="disclaimer.html">Disclaimer</a>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> VKD Apps. All rights reserved.</span>
-      <div class="footer-social" aria-label="Social links"><a href="mailto:business@vkdapps.com" aria-label="Email">✉</a></div>
+      <span>&copy; <span data-year>2026</span> VKD Apps. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="mailto:vkdiosapp@gmail.com">vkdiosapp@gmail.com</a>
+      </div>
     </div>
   </div>
 </footer>
-<button class="back-to-top" aria-label="Back to top">↑</button>
 
 <script src="assets/js/main.js"></script>
 </body>

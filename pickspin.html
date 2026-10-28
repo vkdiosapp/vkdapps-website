@@ -3,36 +3,46 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>PickSpin — Spinner Wheel Game | VKD Apps</title>
-<meta name="description" content="PickSpin — a spinner wheel game with Decision Spinner, Spin Battle multiplayer, Math Challenge, and Race to 10. Free on Android and iOS." />
+<title>PickSpin — Decision Spinner &amp; Mini Game Hub | VKD Apps</title>
+<meta name="description" content="PickSpin — customizable decision wheels, multiplayer Spin Battles, math challenges, and Race to 10. Available for iOS and Android." />
 <link rel="canonical" href="https://vkdapps.com/pickspin.html" />
+
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="VKD Apps" />
-<meta property="og:title" content="PickSpin — Spinner Wheel Game" />
+<meta property="og:title" content="PickSpin — Decision Spinner &amp; Game Hub" />
 <meta property="og:description" content="Decision Spinner, Spin Battle multiplayer, Math Challenge, and Race to 10 — free on Android and iOS." />
 <meta property="og:url" content="https://vkdapps.com/pickspin.html" />
-<meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
-<meta name="theme-color" content="#000000" />
+
+<meta name="theme-color" content="#07080a" />
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 <link rel="manifest" href="manifest.json" />
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
 <script>document.documentElement.classList.add("js");</script>
+
 <link rel="stylesheet" href="assets/css/variables.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/components.css" />
 <link rel="stylesheet" href="assets/css/animations.css" />
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "PickSpin",
   "url": "https://vkdapps.com/pickspin.html",
-  "description": "PickSpin is a casual spin wheel game packed with mini games, math challenges, and party fun — Decision Spinner, Spin Battle multiplayer, Math Challenge, and Race to 10.",
+  "description": "PickSpin is a casual spin wheel game packed with mini games, math challenges, and party fun.",
   "applicationCategory": "GameApplication",
   "operatingSystem": "Android, iOS",
   "installUrl": [
@@ -46,29 +56,39 @@
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
-<div class="noise-layer"></div>
-<div class="scroll-progress"></div>
+
+<div class="noise-layer" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- Site Navigation -->
 <header class="site-nav">
   <div class="container nav-inner">
-    <a href="index.html" class="brand" aria-label="VKD Apps home"><img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" /><span class="brand-name">VKD Apps</span></a>
-    <nav class="nav-links" aria-label="Primary">
+    <a href="index.html" class="brand" aria-label="VKD Apps Home">
+      <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="34" height="34" />
+      <span class="brand-name">VKD Apps</span>
+    </a>
+    <nav class="nav-links" aria-label="Main Navigation">
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
       <a href="products.html" aria-current="page">Products</a>
+      <a href="services.html">Services</a>
       <a href="technology.html">Technology</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
       <a href="contact.html" class="btn btn-secondary btn-sm">Start Your Project</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobileMenu">
+
+<!-- Mobile Drawer -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
   <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
   <a href="products.html">Products</a>
+  <a href="services.html">Services</a>
   <a href="technology.html">Technology</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
@@ -77,171 +97,217 @@
 
 <main id="main">
   <!-- Hero -->
-  <section class="page-hero" style="position:relative; overflow:hidden;">
-    <div class="hero-mesh" style="opacity:.5;"></div>
-    <div class="container" style="position:relative;">
-      <a href="products.html" style="color:var(--text-secondary); font-size:var(--fs-small);" data-reveal>← All Products</a>
-      <div style="display:flex; align-items:center; gap:1rem; margin-top:var(--space-md);" data-reveal data-delay="60">
-        <div class="product-glyph"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-target"></use></svg></div>
-        <span class="eyebrow">Spinner Wheel Game</span>
+  <section class="page-hero">
+    <div class="hero-mesh" aria-hidden="true"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <a href="products.html" style="color: var(--text-secondary); font-size: var(--fs-small); display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: var(--space-sm);" data-reveal>
+        ← All Products
+      </a>
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-top: var(--space-xs);" data-reveal data-delay="60">
+        <div class="card-icon" style="margin-bottom: 0; width: 42px; height: 42px;">
+          <svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-wheel"></use></svg>
+        </div>
+        <span class="eyebrow">Interactive Spinner Game</span>
       </div>
       <h1 data-reveal data-delay="120">PickSpin</h1>
-      <p class="lead" data-reveal data-delay="180">A casual spin wheel game packed with mini games, math challenges, and party fun. Create custom wheels for daily decisions, or jump into multiplayer Spin Battles with friends.</p>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:var(--space-lg);" data-reveal data-delay="240">
-        <a href="https://play.google.com/store/apps/details?id=com.vkd.spinner.game" target="_blank" rel="noopener" class="btn btn-secondary">Download for Android</a>
-        <a href="https://apps.apple.com/in/app/pickspin-spinner-wheel-game/id6757425174" target="_blank" rel="noopener" class="btn btn-primary">Download for iOS</a>
+      <p class="lead" data-reveal data-delay="180">
+        A fast and fair decision spinner game packed with mini games, math challenges, and party fun. Create custom wheels for daily decisions, or jump into multiplayer Spin Battles with friends.
+      </p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: var(--space-lg);" data-reveal data-delay="240">
+        <a href="https://apps.apple.com/in/app/pickspin-spinner-wheel-game/id6757425174" target="_blank" rel="noopener" class="btn btn-primary">Download on App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.vkd.spinner.game" target="_blank" rel="noopener" class="btn btn-secondary">Download on Google Play</a>
       </div>
     </div>
   </section>
 
   <!-- Overview -->
-  <section class="section-pad" style="padding-top:0;">
+  <section class="section-pad" style="padding-top: 0;">
     <div class="container">
-      <div class="grid grid-2" style="align-items:center; gap:var(--space-2xl);">
+      <div class="grid grid-2" style="align-items: center; gap: var(--space-2xl);">
         <div data-reveal>
           <span class="eyebrow">Overview</span>
-          <h2 style="font-size:var(--fs-h2); margin-top:var(--space-sm);">Decisions, without the debate.</h2>
+          <h2 style="font-size: var(--fs-h2); margin-top: var(--space-xs); margin-bottom: var(--space-md);">
+            Decisions made simple and playful.
+          </h2>
+          <p style="color: var(--text-secondary); font-size: var(--fs-lead); line-height: 1.65;">
+            Whether choosing dinner, settling a friendly debate, or hosting a multiplayer challenge, PickSpin delivers a fast, fair, and satisfying experience without ads or friction.
+          </p>
         </div>
-        <div data-reveal data-delay="120">
-          <p style="color:var(--text-secondary); font-size:var(--fs-lead);">Whether you're picking a restaurant, settling an argument, or running a multiplayer battle with friends, PickSpin gives you a fast, fair, and genuinely satisfying way to decide — wrapped in an interface that feels premium rather than gimmicky.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section class="section-pad" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">Features</span>
-        <h2>Everything you need to decide.</h2>
-      </div>
-      <div class="grid grid-3" data-stagger>
-        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-target"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Decision Spinner</h3><p style="color:var(--text-secondary);font-size:.9rem;">Create fully customizable wheels for daily decisions and challenges.</p></div>
-        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-handshake"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Spin Battle</h3><p style="color:var(--text-secondary);font-size:.9rem;">Multiplayer, turn-based battles with friends and point scoring.</p></div>
-        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-braces"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Math Challenge</h3><p style="color:var(--text-secondary);font-size:.9rem;">Practice math by spinning the wheel and solving questions on the fly.</p></div>
-        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-bolt"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Race to 10</h3><p style="color:var(--text-secondary);font-size:.9rem;">A fast-paced number game — race to reach 10 first.</p></div>
-        <div class="card"><div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-wheel"></use></svg></div><h3 style="font-size:1.05rem;margin-bottom:.4rem;">Custom Wheels</h3><p style="color:var(--text-secondary);font-size:.9rem;">Build and save your own spinner wheels for any decision.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Screenshots placeholder -->
-  <section class="section-pad">
-    <div class="container">
-      <div class="section-head center" data-reveal>
-        <span class="eyebrow">Screenshots</span>
-        <h2>A closer look at PickSpin.</h2>
-      </div>
-      <div class="device-row" data-stagger>
-        <div class="device-mock">
-          <img class="shot-img" src="assets/images/app/pickspin-1.jpg" alt="PickSpin game modes — Decision Spinner, Spin Battle, Math Challenge, and Race to 10" width="700" height="1514" loading="lazy" />
-        </div>
-        <div class="device-mock">
-          <img class="shot-img" src="assets/images/app/pickspin-2.jpg" alt="PickSpin Spin Battle multiplayer round with two players and the spinner wheel" width="700" height="1514" loading="lazy" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Technology & Platforms -->
-  <section class="section-pad" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="grid grid-2" style="gap:var(--space-2xl);">
-        <div data-reveal>
-          <span class="eyebrow">Technology</span>
-          <h2 style="font-size:var(--fs-h2); margin-top:var(--space-sm);">Built with Flutter</h2>
-          <p style="color:var(--text-secondary); margin-top:var(--space-sm);">A single Flutter codebase powers both the Android and iOS versions of PickSpin, ensuring consistent behavior and a smaller footprint for updates.</p>
-        </div>
-        <div data-reveal data-delay="120">
-          <span class="eyebrow">Platforms</span>
-          <h2 style="font-size:var(--fs-h2); margin-top:var(--space-sm);">Android &amp; iOS</h2>
-          <div style="display:flex; gap:.8rem; margin-top:var(--space-sm);">
-            <span class="badge">Android</span>
-            <span class="badge">iOS</span>
+        <div class="card" data-reveal data-delay="120">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm); color: var(--accent-bright);">Key Specifications</h3>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.95rem; color: var(--text-secondary);">
+            <div><strong>Platforms:</strong> iOS (iPhone &amp; iPad) and Android</div>
+            <div><strong>Status:</strong> Live on App Store &amp; Google Play</div>
+            <div><strong>Pricing:</strong> 100% Free to Play</div>
+            <div><strong>Technology:</strong> Flutter &amp; Dart High-FPS Engine</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Roadmap -->
-  <section class="section-pad">
+  <!-- Features Grid -->
+  <section class="section-pad" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="section-head" data-reveal>
-        <span class="eyebrow">Future Roadmap</span>
-        <h2>What's next for PickSpin.</h2>
+        <span class="eyebrow">Features</span>
+        <h2>Everything built into PickSpin</h2>
       </div>
-      <div class="timeline" data-reveal>
-        <div class="timeline-item"><div class="timeline-dot">1</div><h3>Custom Themes</h3><p>Personalize the spin wheel and picker interfaces.</p></div>
-        <div class="timeline-item"><div class="timeline-dot">2</div><h3>Shareable Results</h3><p>Share picks and draws directly to social platforms.</p></div>
-        <div class="timeline-item"><div class="timeline-dot">3</div><h3>History &amp; Favorites</h3><p>Save frequently used lists and past results.</p></div>
+      <div class="grid grid-3" data-stagger>
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-target"></use></svg></div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Decision Spinner</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55;">Create custom wheels with unlimited choices, colors, and weights for quick daily decisions.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-handshake"></use></svg></div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Spin Battle</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55;">Turn-based multiplayer mode to challenge friends in party scoring rounds.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-braces"></use></svg></div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Math Challenge</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55;">Timed mental arithmetic challenges unlocked by spin outcomes.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-bolt"></use></svg></div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Race to 10</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55;">Fast-paced tactical number game where players compete to score 10 points first.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-wheel"></use></svg></div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Custom Themes</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55;">Personalize color schemes, haptic feedback profiles, and audio triggers.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#i-shield"></use></svg></div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Offline First</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55;">Fully functional without internet connectivity. All lists saved locally.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow">Visuals</span>
+        <h2>Screenshots from PickSpin</h2>
+      </div>
+      <div style="display: flex; justify-content: center; gap: var(--space-lg); flex-wrap: wrap;" data-stagger>
+        <div class="product-mock-frame">
+          <img src="assets/images/app/pickspin-1.jpg" alt="PickSpin game mode menu" width="700" height="1514" loading="lazy" />
+        </div>
+        <div class="product-mock-frame">
+          <img src="assets/images/app/pickspin-2.jpg" alt="PickSpin multiplayer gameplay screen" width="700" height="1514" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section-pad" style="background:var(--bg-secondary);">
-    <div class="container" style="max-width:820px;">
+  <section class="section-pad" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+    <div class="container" style="max-width: 820px;">
       <div class="section-head center" data-reveal>
         <span class="eyebrow">FAQ</span>
-        <h2>Common questions about PickSpin.</h2>
+        <h2>Frequently asked questions</h2>
       </div>
-      <div class="accordion" data-reveal>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">Is PickSpin free to use?<span class="plus"></span></button>
-          <div class="accordion-panel"><div class="accordion-panel-inner">Yes — PickSpin is free to download on the App Store and Google Play.</div></div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">Can I create unlimited lists?<span class="plus"></span></button>
-          <div class="accordion-panel"><div class="accordion-panel-inner">Yes — PickSpin is designed to support as many custom lists as you need.</div></div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">Does PickSpin work offline?<span class="plus"></span></button>
-          <div class="accordion-panel"><div class="accordion-panel-inner">Core picking and spinning features are designed to work without an internet connection.</div></div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-md);" data-stagger>
+        <details class="card" style="padding: var(--space-md) var(--space-lg); cursor: pointer;">
+          <summary style="font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            <span>Is PickSpin free to download and play?</span>
+            <span style="color: var(--accent-bright); font-size: 1.25rem;">+</span>
+          </summary>
+          <p style="color: var(--text-secondary); margin-top: var(--space-sm); line-height: 1.6; font-size: 0.92rem;">
+            Yes, PickSpin is completely free to download from both Google Play and the Apple App Store.
+          </p>
+        </details>
+        <details class="card" style="padding: var(--space-md) var(--space-lg); cursor: pointer;">
+          <summary style="font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            <span>Can I customize wheel items and colors?</span>
+            <span style="color: var(--accent-bright); font-size: 1.25rem;">+</span>
+          </summary>
+          <p style="color: var(--text-secondary); margin-top: var(--space-sm); line-height: 1.6; font-size: 0.92rem;">
+            Yes, you can create and store as many custom spinner lists as you need, assigning colors, icons, and probabilities.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="glass" style="padding: var(--space-xl); text-align: center;" data-reveal>
+        <h3 style="font-size: var(--fs-h2); margin-bottom: var(--space-xs);">Download PickSpin Today</h3>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto var(--space-md); font-size: var(--fs-lead);">
+          Available free for iPhone, iPad, and all Android devices.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://apps.apple.com/in/app/pickspin-spinner-wheel-game/id6757425174" target="_blank" rel="noopener" class="btn btn-primary">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.vkd.spinner.game" target="_blank" rel="noopener" class="btn btn-secondary">Google Play</a>
         </div>
       </div>
     </div>
   </section>
 </main>
 
+<!-- Global Footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="brand" style="margin-bottom:var(--space-sm);"><img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" />VKD Apps</a>
-        <p style="max-width:32ch;">Premium software engineering for Android, iOS, and the web — built in India, for the world.</p>
+        <a href="index.html" class="brand" style="margin-bottom: var(--space-sm);">
+          <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="32" height="32" />
+          <span>VKD Apps</span>
+        </a>
+        <p style="max-width: 32ch; line-height: 1.6;">
+          Premium software engineering for mobile, web, and AI applications. Built in India, trusted globally.
+        </p>
       </div>
+
       <div class="footer-col">
-        <h4>Company</h4>
-        <a href="about.html">About</a>
-        <a href="technology.html">Technology</a>
-        <a href="services.html">Services</a>
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
         <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="technology.html">Technology</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
+
       <div class="footer-col">
-        <h4>Products</h4>
+        <h4>Our Products</h4>
         <a href="pickspin.html">PickSpin</a>
         <a href="brainboost.html">BrainBoost</a>
         <a href="rent-agreement-maker.html">Rent Agreement Maker</a>
         <a href="flowcare.html">FlowCare</a>
       </div>
+
       <div class="footer-col">
-        <h4>Legal</h4>
+        <h4>Legal &amp; Trust</h4>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
         <a href="cookie-policy.html">Cookie Policy</a>
         <a href="disclaimer.html">Disclaimer</a>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> VKD Apps. All rights reserved.</span>
-      <div class="footer-social" aria-label="Social links"><a href="mailto:business@vkdapps.com" aria-label="Email">✉</a></div>
+      <span>&copy; <span data-year>2026</span> VKD Apps. All rights reserved.</span>
+      <div class="footer-social" aria-label="Contact channels">
+        <a href="mailto:vkdiosapp@gmail.com" aria-label="Send email to vkdiosapp@gmail.com">
+          <svg style="width:16px;height:16px;" aria-hidden="true"><use href="assets/icons/sprite.svg#i-mail"></use></svg>
+        </a>
+      </div>
     </div>
   </div>
 </footer>
-<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<button class="back-to-top" aria-label="Scroll back to top">
+  <svg style="width:18px;height:18px;" aria-hidden="true"><use href="assets/icons/sprite.svg#i-upload"></use></svg>
+</button>
 
 <script src="assets/js/main.js"></script>
 </body>

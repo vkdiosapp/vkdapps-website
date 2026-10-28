@@ -3,25 +3,36 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Contact VKD Apps — Start Your Project</title>
-<meta name="description" content="Get in touch with VKD Apps to discuss your Android, iOS, web, or AI application project. Reach us at business@vkdapps.com or use our contact form." />
+<title>Contact VKD Apps — Start Your Project | App Development &amp; Redesign</title>
+<meta name="description" content="Get in touch with VKD Apps to discuss your iOS or Android app, local LLM integration, custom billing system, or full application redesign. Email us directly at vkdiosapp@gmail.com." />
 <link rel="canonical" href="https://vkdapps.com/contact.html" />
+
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="VKD Apps" />
-<meta property="og:title" content="Contact VKD Apps" />
-<meta property="og:description" content="Tell us about your project and let's build something amazing together." />
+<meta property="og:title" content="Contact VKD Apps — Start Your Project" />
+<meta property="og:description" content="Reach out to discuss your mobile app development, local LLMs, billing solutions, or full app redesign. Direct email: vkdiosapp@gmail.com." />
 <meta property="og:url" content="https://vkdapps.com/contact.html" />
-<meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
-<meta name="twitter:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
+
 <meta name="theme-color" content="#000000" />
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 <link rel="manifest" href="manifest.json" />
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<script>document.documentElement.classList.add("js");</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Inconsolata:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<script>
+  document.documentElement.classList.add("js");
+  (function(){
+    var t = localStorage.getItem("vkd_theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+
 <link rel="stylesheet" href="assets/css/variables.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/components.css" />
@@ -29,29 +40,50 @@
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
-<div class="noise-layer"></div>
-<div class="scroll-progress"></div>
+
+<!-- Navigation Header -->
 <header class="site-nav">
   <div class="container nav-inner">
-    <a href="index.html" class="brand" aria-label="VKD Apps home"><img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" /><span class="brand-name">VKD Apps</span></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="products.html">Products</a>
+    <a href="index.html" class="brand" aria-label="VKD Apps Home">
+      <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="28" height="28" />
+      <span>VKD Apps</span>
+    </a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="index.html">Overview</a>
+      <a href="services.html">Capabilities</a>
       <a href="technology.html">Technology</a>
       <a href="about.html">About</a>
       <a href="contact.html" aria-current="page">Contact</a>
     </nav>
     <div class="nav-cta">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
       <a href="contact.html" class="btn btn-secondary btn-sm">Start Your Project</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="products.html">Products</a>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+  <a href="index.html">Overview</a>
+  <a href="services.html">Capabilities</a>
   <a href="technology.html">Technology</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
@@ -59,116 +91,201 @@
 </div>
 
 <main id="main">
-  <section class="page-hero" style="padding-bottom:0;">
+  <!-- Page Hero -->
+  <section class="page-hero">
     <div class="container">
-      <span class="eyebrow" data-reveal>Get In Touch</span>
-      <h1 data-reveal data-delay="80">Let's build something <span class="gradient-text">amazing together</span>.</h1>
-      <p class="lead" data-reveal data-delay="160">Tell us about your project and we'll get back to you with next steps. For general inquiries, reach us directly at the emails below.</p>
+      <span class="eyebrow" data-reveal>[ Direct Engineering Access ]</span>
+      <h1 data-reveal data-delay="60">
+        Initiate your project.
+      </h1>
+      <p class="lead" data-reveal data-delay="120">
+        Direct collaboration with lead software engineers. Discuss native mobile apps, on-device Local LLMs, custom billing systems, or a complete application redesign.
+      </p>
     </div>
   </section>
 
-  <section class="section-pad">
+  <!-- Form & Contact Section -->
+  <section class="section-pad" style="padding-top: var(--space-md);">
     <div class="container">
-      <h2 class="sr-only">Contact form and details</h2>
-      <div class="grid grid-2" style="gap:var(--space-2xl); align-items:start;">
+      <div class="contact-page-layout">
 
-        <div class="card" data-reveal style="padding:var(--space-xl);">
-          <form id="contactForm" novalidate>
+        <!-- Left Column: Direct Email & Studio Guarantees -->
+        <aside class="contact-sidebar" data-reveal data-delay="80">
+          
+          <!-- Primary Direct Email Card -->
+          <div class="contact-email-card">
+            <span class="email-eyebrow">Direct Engineering Inbox</span>
+            <a href="mailto:vkdiosapp@gmail.com" class="email-address">vkdiosapp@gmail.com</a>
+            <p class="email-desc">
+              Send specifications, design files, or RFPs directly to our lead engineering team. We review every brief directly.
+            </p>
+          </div>
+
+          <!-- Studio Guarantees -->
+          <div class="contact-spec-box">
+            <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div>
+              <h4>24–48h Technical Response</h4>
+              <p>Every inquiry receives an engineering evaluation and response within 1–2 business days.</p>
+            </div>
+          </div>
+
+          <div class="contact-spec-box">
+            <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <div>
+              <h4>100% Client IP Ownership</h4>
+              <p>Complete source code, Git repositories, and deployment keys transfer to you upon milestone delivery.</p>
+            </div>
+          </div>
+
+          <div class="contact-spec-box">
+            <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <div>
+              <h4>Strict Mutual NDA</h4>
+              <p>We execute standard mutual non-disclosure agreements before reviewing proprietary systems.</p>
+            </div>
+          </div>
+
+          <div class="contact-spec-box">
+            <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <div>
+              <h4>Global Delivery</h4>
+              <p>Engineering software for clients across North America, Europe, Asia, and Australia.</p>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- Right Column: Project Inquiry Form Card -->
+        <div class="card" data-reveal data-delay="140" style="padding: var(--space-xl);">
+          <div style="margin-bottom: var(--space-md); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--border-subtle);">
+            <h3 style="font-size: var(--fs-h3); color: var(--text-primary); font-weight: 700;">Project Scope &amp; Requirements</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">
+              Fill in your specifications or current app details below.
+            </p>
+          </div>
+
+          <form id="contactForm"
+                toolname="request-software-consultation"
+                tooldescription="Submit a software engineering project inquiry to the VKD Apps development team."
+                novalidate>
             <div class="form-grid">
+              
               <div class="field">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required autocomplete="name" />
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required autocomplete="name"
+                       toolparamdescription="Full name of contact person"
+                       placeholder="e.g. Alex Miller" />
               </div>
+
               <div class="field">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required autocomplete="email" />
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email"
+                       toolparamdescription="Valid email address"
+                       placeholder="e.g. alex@company.com" />
               </div>
+
               <div class="field">
-                <label for="company">Company (Optional)</label>
-                <input type="text" id="company" name="company" autocomplete="organization" />
+                <label for="company">Company / Organization</label>
+                <input type="text" id="company" name="company" autocomplete="organization"
+                       toolparamdescription="Company name or startup"
+                       placeholder="e.g. Acme Corp (optional)" />
               </div>
+
               <div class="field">
-                <label for="phone">Phone (Optional)</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" />
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel"
+                       toolparamdescription="Contact phone number"
+                       placeholder="+1 (555) 000-0000 (optional)" />
               </div>
+
               <div class="field">
-                <label for="projectType">Project Type</label>
-                <select id="projectType" name="projectType" required>
-                  <option value="" disabled selected>Select a project type</option>
-                  <option value="android">Android App</option>
-                  <option value="ios">iOS App</option>
-                  <option value="flutter">Flutter / Cross-Platform App</option>
-                  <option value="web">Web Application</option>
-                  <option value="ai">AI-Powered Application</option>
-                  <option value="business">Business Software</option>
-                  <option value="modernization">Existing App Modernization</option>
-                  <option value="mvp">MVP Development</option>
-                  <option value="other">Other</option>
+                <label for="projectType">Project Focus *</label>
+                <select id="projectType" name="projectType" required
+                        toolparamdescription="Project focus: ios, android, local-llm, billing, custom-build, redesign, flutter">
+                  <option value="" disabled selected>Select project focus</option>
+                  <option value="ios">Native iOS Application (Swift 6)</option>
+                  <option value="android">Native Android Application (Kotlin 2.0)</option>
+                  <option value="local-llm">Local LLM Application (On-Device CoreML / ONNX)</option>
+                  <option value="billing">Custom Billing &amp; Metering Engine</option>
+                  <option value="redesign">Full App Redesign &amp; Modernization</option>
+                  <option value="custom-build">Bespoke Product Build (Any Requirement)</option>
+                  <option value="flutter">Cross-Platform App (Flutter)</option>
+                  <option value="other">Other Systems Engineering</option>
                 </select>
               </div>
+
               <div class="field">
-                <label for="budget">Estimated Budget</label>
-                <select id="budget" name="budget" required>
-                  <option value="" disabled selected>Select a budget range</option>
+                <label for="budget">Estimated Budget (USD) *</label>
+                <select id="budget" name="budget" required
+                        toolparamdescription="Estimated project budget bracket">
+                  <option value="" disabled selected>Select budget bracket</option>
                   <option value="under-5k">Under $5,000</option>
                   <option value="5k-15k">$5,000 – $15,000</option>
                   <option value="15k-50k">$15,000 – $50,000</option>
                   <option value="50k-plus">$50,000+</option>
-                  <option value="not-sure">Not Sure Yet</option>
+                  <option value="flexible">Flexible / To Be Evaluated</option>
                 </select>
               </div>
+
               <div class="field full">
-                <label for="inquiryType">Inquiry Category</label>
-                <select id="inquiryType" name="inquiryType" required>
-                  <option value="" disabled selected>Select an inquiry category</option>
-                  <option value="new-project">New Project</option>
-                  <option value="existing-support">Existing Product Support</option>
-                  <option value="partnership">Partnership</option>
-                  <option value="careers">Careers</option>
-                  <option value="press">Press / Media</option>
-                  <option value="general">General Inquiry</option>
+                <label for="inquiryType">Inquiry Category *</label>
+                <select id="inquiryType" name="inquiryType" required
+                        toolparamdescription="Category: new-app, full-redesign, enterprise-custom, local-llm, billing, general">
+                  <option value="" disabled selected>Select inquiry category</option>
+                  <option value="new-project">New App Development (iOS / Android)</option>
+                  <option value="local-llm">Local LLM Application (On-Device)</option>
+                  <option value="billing-infrastructure">Custom Billing &amp; Invoicing Engine</option>
+                  <option value="full-redesign">Full Application Redesign &amp; Modernization</option>
+                  <option value="custom-product">Custom Enterprise Product</option>
+                  <option value="general">General Software Architecture Consultation</option>
                 </select>
               </div>
+
               <div class="field full">
-                <label for="message">Project Details</label>
-                <textarea id="message" name="message" required placeholder="Tell us about your goals, timeline, and any specific requirements."></textarea>
+                <label for="message">Project Requirements &amp; Scope *</label>
+                <textarea id="message" name="message" required
+                          toolparamdescription="Scope, user requirements, current bottlenecks or target features"
+                          placeholder="Describe the application you want to engineer, specific functional requirements, or existing app link for an architectural redesign."></textarea>
               </div>
             </div>
-            <div class="field" aria-hidden="true" style="position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap;">
-              <label for="website">Leave this field empty</label>
+
+            <!-- Honeypot -->
+            <div class="field" aria-hidden="true" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap;">
+              <label for="website">Do not fill this</label>
               <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
             </div>
-            <button type="submit" class="btn btn-primary btn-block" style="margin-top:var(--space-md);">Send Message</button>
-          </form>
-          <div id="formError" class="glass" style="padding:var(--space-md); border-color:var(--accent-border); margin-top:var(--space-md);" role="alert" hidden>
-            <p id="formErrorText" style="color:var(--text-secondary); margin:0;"></p>
-          </div>
-          <div id="formSuccess" class="glass" style="padding:var(--space-xl); text-align:center;" role="status" hidden>
-            <h3 style="font-size:var(--fs-h3); margin-bottom:.6rem;">Message sent.</h3>
-            <p style="color:var(--text-secondary);">Thank you for reaching out. Our team will review your project details and respond within 1–2 business days.</p>
-          </div>
-        </div>
 
-        <div style="display:flex; flex-direction:column; gap:var(--space-md);" data-reveal data-delay="120">
-          <div class="card">
-            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-mail"></use></svg></div>
-            <h3 style="font-size:1.05rem; margin-bottom:.4rem;">Business Inquiries</h3>
-            <p style="color:var(--text-secondary); font-size:.92rem;"><a href="mailto:business@vkdapps.com" style="color:var(--text-primary);">business@vkdapps.com</a></p>
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top: var(--space-md); padding-block: 1rem;">
+              Submit Project Inquiry
+            </button>
+            <div style="font-size: 0.76rem; color: var(--text-secondary); text-align: center; margin-top: 0.75rem;">
+              🔒 Direct senior engineer review • Strict NDA confidentiality • Zero spam
+            </div>
+          </form>
+
+          <!-- Status Banners -->
+          <div id="formError" class="glass" style="padding: var(--space-md); margin-top: var(--space-md); border-color: rgba(255, 69, 58, 0.4);" role="alert" hidden tabindex="-1">
+            <p id="formErrorText" style="color: var(--text-primary); margin: 0; font-size: 0.95rem;"></p>
           </div>
-          <div class="card">
-            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-wrench"></use></svg></div>
-            <h3 style="font-size:1.05rem; margin-bottom:.4rem;">Support</h3>
-            <p style="color:var(--text-secondary); font-size:.92rem;"><a href="mailto:support@vkdapps.com" style="color:var(--text-primary);">support@vkdapps.com</a></p>
-          </div>
-          <div class="card">
-            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-map-pin"></use></svg></div>
-            <h3 style="font-size:1.05rem; margin-bottom:.4rem;">Based In</h3>
-            <p style="color:var(--text-secondary); font-size:.92rem;">India — serving clients worldwide.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-clock"></use></svg></div>
-            <h3 style="font-size:1.05rem; margin-bottom:.4rem;">Response Time</h3>
-            <p style="color:var(--text-secondary); font-size:.92rem;">We typically respond within 1–2 business days.</p>
+
+          <div id="formSuccess" class="glass" style="padding: var(--space-xl); text-align: center; margin-top: var(--space-md); border-color: rgba(48, 209, 88, 0.4);" role="status" hidden tabindex="-1">
+            <h3 style="font-size: var(--fs-h3); margin-bottom: 0.5rem; color: #30d158;">Inquiry Received</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Thank you for reaching out. A lead engineer will review your specifications and reply to your work email within 24 to 48 hours.
+            </p>
           </div>
         </div>
 
@@ -177,28 +294,37 @@
   </section>
 </main>
 
+<!-- Tesla-Style Minimalist Footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="brand" style="margin-bottom:var(--space-sm);"><img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" />VKD Apps</a>
-        <p style="max-width:32ch;">Premium software engineering for Android, iOS, and the web — built in India, for the world.</p>
+        <a href="index.html" class="brand" style="margin-bottom: var(--space-sm);">
+          <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="28" height="28" />
+          <span>VKD Apps</span>
+        </a>
+        <p style="max-width: 32ch; line-height: 1.6; font-size: 0.9rem;">
+          Specialized software engineering studio. High-performance Android &amp; iOS applications, on-device Local LLMs, custom billing engines, and full app redesigns.
+        </p>
       </div>
+
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <a href="services.html">iOS Development</a>
+        <a href="services.html">Android Development</a>
+        <a href="services.html">Local LLM Applications</a>
+        <a href="services.html">Custom Billing Solutions</a>
+        <a href="services.html">Full App Redesign</a>
+      </div>
+
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="about.html">About</a>
+        <a href="services.html">Capabilities</a>
         <a href="technology.html">Technology</a>
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="footer-col">
-        <h4>Products</h4>
-        <a href="pickspin.html">PickSpin</a>
-        <a href="brainboost.html">BrainBoost</a>
-        <a href="rent-agreement-maker.html">Rent Agreement Maker</a>
-        <a href="flowcare.html">FlowCare</a>
-      </div>
+
       <div class="footer-col">
         <h4>Legal</h4>
         <a href="privacy-policy.html">Privacy Policy</a>
@@ -207,13 +333,15 @@
         <a href="disclaimer.html">Disclaimer</a>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> VKD Apps. All rights reserved.</span>
-      <div class="footer-social" aria-label="Social links"><a href="mailto:business@vkdapps.com" aria-label="Email">✉</a></div>
+      <span>&copy; <span data-year>2026</span> VKD Apps. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="mailto:vkdiosapp@gmail.com">vkdiosapp@gmail.com</a>
+      </div>
     </div>
   </div>
 </footer>
-<button class="back-to-top" aria-label="Back to top">↑</button>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/contact.js"></script>

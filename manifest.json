@@ -4,8 +4,8 @@
   "description": "Premium software engineering for Android, iOS, and the web.",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#050505",
-  "theme_color": "#050505",
+  "background_color": "#07080a",
+  "theme_color": "#07080a",
   "icons": [
     {
       "src": "assets/icons/favicon.svg",

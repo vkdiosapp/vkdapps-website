@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>VKD Apps — Premium Software Engineering | Android, iOS &amp; Web</title>
-<meta name="description" content="VKD Apps designs and builds premium Android, iOS, and web applications engineered with modern technology, refined UX, and enterprise-grade reliability." />
-<meta name="keywords" content="VKD Apps, app development company India, Android app development, iOS app development, Flutter development, AI applications, business software" />
+<title>VKD Apps — iOS &amp; Android Apps, Local LLMs &amp; Custom Billing Systems</title>
+<meta name="description" content="VKD Apps engineers high-performance iOS and Android applications, on-device Local LLM apps, custom enterprise billing solutions, and complete app redesigns." />
+<meta name="keywords" content="iOS development, Android development, Local LLM apps, on-device AI, custom billing solutions, app redesign, Swift, Kotlin, Flutter" />
 <meta name="author" content="VKD Apps" />
 <link rel="canonical" href="https://vkdapps.com/" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="VKD Apps" />
-<meta property="og:title" content="VKD Apps — Premium Software Engineering" />
-<meta property="og:description" content="We build premium software that is simple, elegant, reliable, and engineered to solve real-world problems." />
+<meta property="og:title" content="VKD Apps — High-Performance Mobile &amp; Systems Engineering" />
+<meta property="og:description" content="Native iOS &amp; Android apps, private Local LLM software, custom billing engines, and full app redesigns." />
 <meta property="og:url" content="https://vkdapps.com/" />
 <meta property="og:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="VKD Apps — Premium Software Engineering" />
-<meta name="twitter:description" content="Premium Android, iOS &amp; Web applications engineered for real-world impact." />
+<meta name="twitter:title" content="VKD Apps — High-Performance Software Engineering" />
+<meta name="twitter:description" content="Native iOS &amp; Android apps, Local LLM software, and custom billing solutions." />
 <meta name="twitter:image" content="https://vkdapps.com/assets/images/og-cover.jpg" />
 
 <meta name="theme-color" content="#000000" />
@@ -28,11 +28,18 @@
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 <link rel="manifest" href="manifest.json" />
 
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Inconsolata:wght@400;600;700&display=swap" rel="stylesheet" />
 
-<script>document.documentElement.classList.add("js");</script>
+<script>
+  document.documentElement.classList.add("js");
+  (function(){
+    var t = localStorage.getItem("vkd_theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
 
 <link rel="stylesheet" href="assets/css/variables.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
@@ -46,285 +53,612 @@
   "name": "VKD Apps",
   "url": "https://vkdapps.com",
   "logo": "https://vkdapps.com/assets/icons/logo-512.png",
-  "description": "VKD Apps builds premium Android, iOS, and web applications engineered with modern technology and outstanding user experience.",
+  "description": "VKD Apps engineers native iOS and Android apps, on-device Local LLM applications, custom billing engines, and complete application redesigns.",
   "address": { "@type": "PostalAddress", "addressCountry": "IN" },
-  "email": "business@vkdapps.com",
-  "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "business@vkdapps.com" },
-  "sameAs": []
+  "email": "vkdiosapp@gmail.com"
 }
 </script>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
 
-<div class="noise-layer"></div>
-<div class="scroll-progress"></div>
-<!-- Navigation -->
+<!-- Floating Paradam-Style Circular Rotating Stamp -->
+<div class="rotating-stamp" aria-hidden="true">
+  <svg viewBox="0 0 100 100">
+    <path id="stampPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"></path>
+    <text class="spin-badge">
+      <textPath href="#stampPath">VKD APPS • INDUSTRIAL LAB • EST 2024 •</textPath>
+    </text>
+  </svg>
+  <span class="stamp-center">VKD</span>
+</div>
+
+<!-- Unified Minimalist Floating Navigation -->
 <header class="site-nav">
   <div class="container nav-inner">
-    <a href="index.html" class="brand" aria-label="VKD Apps home">
-      <img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" />
-      <span class="brand-name">VKD Apps</span>
+    <a href="index.html" class="brand" aria-label="VKD Apps Home">
+      <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="26" height="26" />
+      <span>VKD Apps</span>
     </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="services.html">Services</a>
-      <a href="products.html">Products</a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="services.html">Capabilities</a>
       <a href="technology.html">Technology</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
       <a href="contact.html" class="btn btn-secondary btn-sm">Start Your Project</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="products.html">Products</a>
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+  <a href="index.html" aria-current="page">Overview</a>
+  <a href="services.html">Capabilities</a>
   <a href="technology.html">Technology</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
-  <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+  <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Start Your Project</a>
 </div>
 
 <main id="main">
 
-  <!-- 1. HERO -->
-  <section class="hero" style="padding-top:var(--nav-h); min-height:100svh; display:flex; align-items:center; overflow:hidden;">
-    <div class="hero-mesh"></div>
-    <div class="float-el" style="width:8px;height:8px;top:22%;left:12%;"></div>
-    <div class="float-el" style="width:5px;height:5px;top:65%;left:20%;animation-delay:1.5s;"></div>
-    <div class="float-el" style="width:4px;height:4px;top:78%;left:75%;animation-delay:.8s;"></div>
-    <div class="container" style="position:relative; z-index:1; padding-block:var(--space-2xl);">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div data-reveal>
-            <span class="eyebrow">Premium Software Engineering, from India to the World</span>
+  <!-- ============================================================
+       SECTION 1: NATIVE IOS & ANDROID APPS (INTERACTIVE SANDBOX)
+       ============================================================ -->
+  <section class="tesla-viewport-section" id="mobile">
+    <div class="tesla-top">
+      <span class="eyebrow" data-reveal>[ Native Mobile Architecture ]</span>
+      <h1 data-reveal data-delay="60">
+        iOS &amp; Android Engineering
+      </h1>
+      <p class="lead" data-reveal data-delay="120">
+        Direct-to-metal Swift 6 and Kotlin 2.0 applications engineered for 120 FPS rendering, sub-5ms touch latency, and zero UI jank.
+      </p>
+    </div>
+
+    <!-- Centerpiece: Interactive Device Sandbox -->
+    <div class="tesla-center" data-reveal data-delay="180">
+      <div class="device-sandbox tilt-card">
+        <div class="sandbox-controls">
+          <div class="platform-pills">
+            <button id="pillIos" class="platform-pill active" type="button"> Apple iOS (Swift 6)</button>
+            <button id="pillAndroid" class="platform-pill" type="button">🤖 Android (Kotlin 2.0)</button>
           </div>
-          <h1 style="font-size:var(--fs-hero); margin-top:var(--space-md);" data-reveal data-delay="80">
-            Building Software That People Love.
-          </h1>
-          <p class="lead" style="font-size:var(--fs-lead); color:var(--text-secondary); max-width:560px; margin-top:var(--space-md);" data-reveal data-delay="160">
-            VKD Apps designs and engineers premium Android, iOS, and web applications — where meticulous craft meets real-world reliability, for individuals, startups, and enterprises alike.
-          </p>
-          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:var(--space-lg);" data-reveal data-delay="240">
-            <a href="products.html" class="btn btn-primary">Explore Products</a>
-            <a href="contact.html" class="btn btn-secondary">Start Your Project</a>
+          <div class="telemetry-chip">
+            <span class="beacon-dot active-green"></span>
+            <span>Touch Latency: <strong id="sandboxLatencyVal" style="color: var(--text-primary);">3.8ms</strong></span>
           </div>
         </div>
 
-        <div class="hero-showcase" aria-hidden="true">
-          <div class="hero-stage">
-            <div class="hero-phone hero-phone-left">
-              <div class="hero-phone-inner"><img src="assets/images/app/flowcare-1.jpg" alt="" width="640" height="1422" loading="eager" /></div>
+        <div class="sandbox-body">
+          <!-- Live Interactive Phone Frame -->
+          <div class="phone-frame">
+            <div class="phone-notch">
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: #2c2d33;"></span>
+              <span style="width: 14px; height: 4px; border-radius: 2px; background: #2c2d33;"></span>
             </div>
-            <div class="hero-phone hero-phone-right">
-              <div class="hero-phone-inner"><img src="assets/images/app/rent-agreement-1.jpg" alt="" width="640" height="1387" loading="eager" /></div>
+            <div class="phone-screen">
+              <div>
+                <div class="screen-app-bar">
+                  <span id="sandboxScreenTitle"> Apple Swift 6</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #30d158;">120 FPS</span>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-secondary); margin-top: 3px;" id="sandboxScreenSub">
+                  SwiftUI • ProMotion 120Hz
+                </div>
+
+                <div class="screen-card">
+                  <div style="font-size: 0.7rem; font-weight: 600; color: var(--text-primary);">Telemetry Stream</div>
+                  <div class="screen-chart-bars">
+                    <div class="chart-bar" style="height: 24px;"></div>
+                    <div class="chart-bar" style="height: 38px;"></div>
+                    <div class="chart-bar active" style="height: 32px;"></div>
+                    <div class="chart-bar" style="height: 44px;"></div>
+                    <div class="chart-bar" style="height: 28px;"></div>
+                    <div class="chart-bar" style="height: 40px;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <button id="sandboxTouchBtn" class="screen-interactive-btn" type="button">
+                Simulate Touch Event
+              </button>
             </div>
-            <div class="hero-phone hero-phone-front">
-              <div class="hero-phone-inner"><img src="assets/images/app/brainboost-1.jpg" alt="" width="640" height="1387" loading="eager" /></div>
+          </div>
+
+          <!-- Specs Breakdown -->
+          <div class="sandbox-specs">
+            <div class="spec-row">
+              <span class="spec-name">Runtime Concurrency Engine</span>
+              <span class="spec-detail" id="sandboxSpecEngine">Swift 6 Concurrency (Sendable / Actors)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-name">Hardware Graphics Pipeline</span>
+              <span class="spec-detail" id="sandboxSpecGraphics">Apple Metal Pipeline (0 Stutter)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-name">Thread Scheduling</span>
+              <span class="spec-detail" id="sandboxSpecThreads">Grand Central Dispatch + Cooperative Pool</span>
+            </div>
+            <div class="spec-row" style="border-bottom: none;">
+              <span class="spec-name">Store Validation</span>
+              <span class="spec-detail" style="color: #30d158;">Guaranteed App Store &amp; Play Store Approval</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- 2. PRODUCTS — the proof leads -->
-  <section class="section-pad" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">Our Products</span>
-        <h2>Applications we've built and shipped.</h2>
-        <p>Three apps are live on the App Store and Google Play today. FlowCare is on the way.</p>
+    <div class="tesla-bottom" data-reveal data-delay="240">
+      <div class="tesla-actions">
+        <a href="contact.html" class="btn btn-primary">Build Mobile App</a>
+        <a href="services.html" class="btn btn-secondary">Explore Capabilities</a>
       </div>
-
-      <div class="product-row" data-reveal>
-        <div>
-          <span class="eyebrow">Spinner Wheel Game</span>
-          <h3 class="product-row-title">PickSpin</h3>
-          <p class="product-row-text">A fast, fair way to decide — custom Decision Spinner wheels, multiplayer Spin Battles, Math Challenge, and Race to 10.</p>
-          <div class="tag-row"><span>Android</span><span>iOS</span><span>Free</span></div>
-          <div class="product-row-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.vkd.spinner.game" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" aria-label="Download PickSpin on Google Play">Google Play</a>
-            <a href="https://apps.apple.com/in/app/pickspin-spinner-wheel-game/id6757425174" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" aria-label="Download PickSpin on the App Store">App Store</a>
-            <a href="pickspin.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
-          </div>
+      <div class="tesla-specs">
+        <div class="spec-item">
+          <span class="spec-value">120 FPS</span>
+          <span class="spec-label">ProMotion Rendering</span>
         </div>
-        <div class="product-row-media">
-          <div class="device-mock"><img class="shot-img" src="assets/images/app/pickspin-2.jpg" alt="PickSpin Spin Battle multiplayer round with two players and the spinner wheel" width="700" height="1514" loading="lazy" /></div>
+        <div class="spec-item">
+          <span class="spec-value">0ms</span>
+          <span class="spec-label">Offline Lag</span>
         </div>
-      </div>
-
-      <div class="product-row is-reversed" data-reveal>
-        <div>
-          <span class="eyebrow">Memory, Focus &amp; IQ Training</span>
-          <h3 class="product-row-title">BrainBoost</h3>
-          <p class="product-row-text">32+ games across reaction, memory, math, visual, and logic — plus an AI Coach that turns your play history into a personal training plan.</p>
-          <div class="tag-row"><span>iOS</span><span>Android Soon</span><span>Free</span></div>
-          <div class="product-row-actions">
-            <a href="https://apps.apple.com/in/app/brain-boost-ai-powered/id6758626335" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" aria-label="Download BrainBoost on the App Store">App Store</a>
-            <a href="brainboost.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
-          </div>
+        <div class="spec-item">
+          <span class="spec-value">Metal &amp; Vulkan</span>
+          <span class="spec-label">GPU Acceleration</span>
         </div>
-        <div class="product-row-media">
-          <div class="device-mock" style="animation-delay:-2s;"><img class="shot-img" src="assets/images/app/brainboost-1.jpg" alt="BrainBoost exercises screen with the Count Rush game and a reaction-time trend chart" width="640" height="1387" loading="lazy" /></div>
-        </div>
-      </div>
-
-      <div class="product-row" data-reveal>
-        <div>
-          <span class="eyebrow">Create, Scan &amp; Manage Leases</span>
-          <h3 class="product-row-title">Rent Agreement Maker</h3>
-          <p class="product-row-text">Create a professional rental agreement in minutes — AI clause suggestions, an agreement health scanner, and offline PDF export.</p>
-          <div class="tag-row"><span>iOS</span><span>Android Soon</span><span>Free</span></div>
-          <div class="product-row-actions">
-            <a href="https://apps.apple.com/in/app/rent-agreement-maker-ai/id6760934788" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" aria-label="Download Rent Agreement Maker on the App Store">App Store</a>
-            <a href="rent-agreement-maker.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
-          </div>
-        </div>
-        <div class="product-row-media">
-          <div class="device-mock" style="animation-delay:-4s;"><img class="shot-img" src="assets/images/app/rent-agreement-2.jpg" alt="Rent Agreement Maker AI Agreement Health Scanner screen" width="640" height="1387" loading="lazy" /></div>
-        </div>
-      </div>
-
-      <div class="product-row is-reversed" data-reveal>
-        <div>
-          <span class="eyebrow">Coming Soon</span>
-          <h3 class="product-row-title">FlowCare <span class="badge badge-soon" style="margin-left:.4rem;">In Development</span></h3>
-          <p class="product-row-text">A period tracker built with care — cycle and ovulation tracking, symptom logging, calendar insights, and gentle relief tools.</p>
-          <div class="tag-row"><span>Android</span><span>iOS</span></div>
-          <div class="product-row-actions">
-            <a href="flowcare.html" class="card-link gradient-text">Learn more <span class="arrow">→</span></a>
-          </div>
-        </div>
-        <div class="product-row-media">
-          <div class="device-mock" style="animation-delay:-6s;"><img class="shot-img" src="assets/images/app/flowcare-1.jpg" alt="FlowCare home screen showing the current period day, next ovulation, and daily symptom logging" width="640" height="1422" loading="lazy" /></div>
+        <div class="spec-item">
+          <span class="spec-value">100% Native</span>
+          <span class="spec-label">Zero Compromise</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. CAPABILITY — services explain, products prove -->
-  <section class="section-pad">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">What We Do</span>
-        <h2>The same standard, applied to your product.</h2>
-        <p>We build across mobile, web, and AI — with the architecture, security, and performance decisions made deliberately, from the first commit.</p>
-      </div>
-      <div class="grid grid-3" data-stagger>
-        <div class="card">
-          <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-android"></use></svg></div>
-          <h3 style="font-size:1.1rem;margin-bottom:.4rem;">Android</h3>
-          <p style="color:var(--text-secondary);font-size:.9rem;">Native, performant Android apps built on modern architecture.</p>
-          <div class="tag-row"><span>Kotlin</span><span>Jetpack</span></div>
-        </div>
-        <div class="card">
-          <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-apple"></use></svg></div>
-          <h3 style="font-size:1.1rem;margin-bottom:.4rem;">iOS</h3>
-          <p style="color:var(--text-secondary);font-size:.9rem;">Refined iOS experiences that feel native to Apple's ecosystem.</p>
-          <div class="tag-row"><span>Swift</span><span>SwiftUI</span></div>
-        </div>
-        <div class="card">
-          <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-layers"></use></svg></div>
-          <h3 style="font-size:1.1rem;margin-bottom:.4rem;">Cross-Platform</h3>
-          <p style="color:var(--text-secondary);font-size:.9rem;">One maintainable codebase, native-grade on both platforms.</p>
-          <div class="tag-row"><span>Flutter</span><span>Dart</span></div>
-        </div>
-        <div class="card">
-          <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-ai"></use></svg></div>
-          <h3 style="font-size:1.1rem;margin-bottom:.4rem;">AI Applications</h3>
-          <p style="color:var(--text-secondary);font-size:.9rem;">Intelligent features that earn their place — as in BrainBoost's AI Coach.</p>
-          <div class="tag-row"><span>On-device</span><span>Adaptive</span></div>
-        </div>
-        <div class="card">
-          <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-server"></use></svg></div>
-          <h3 style="font-size:1.1rem;margin-bottom:.4rem;">Backend &amp; APIs</h3>
-          <p style="color:var(--text-secondary);font-size:.9rem;">Well-structured services that connect every layer of the product.</p>
-          <div class="tag-row"><span>Node.js</span><span>Firebase</span><span>REST</span></div>
-        </div>
-        <div class="card">
-          <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-globe"></use></svg></div>
-          <h3 style="font-size:1.1rem;margin-bottom:.4rem;">Web Applications</h3>
-          <p style="color:var(--text-secondary);font-size:.9rem;">Fast, scalable web platforms engineered for growth.</p>
-          <div class="tag-row"><span>Performance</span><span>Cloud</span></div>
-        </div>
-      </div>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:var(--space-lg);" data-reveal>
-        <a href="services.html" class="btn btn-secondary">View All Services</a>
-        <a href="technology.html" class="btn btn-secondary">Explore Our Technology</a>
-      </div>
+  <!-- Marquee Ticker 1 -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item"><strong>NATIVE SWIFT 6</strong><span class="dot"></span></div>
+      <div class="marquee-item">JETPACK COMPOSE 2.0<span class="dot"></span></div>
+      <div class="marquee-item"><strong>120 FPS PROMOTION</strong><span class="dot"></span></div>
+      <div class="marquee-item">LOCAL NEURAL ENGINE<span class="dot"></span></div>
+      <div class="marquee-item"><strong>ZERO CLOUD EGRESS</strong><span class="dot"></span></div>
+      <div class="marquee-item">METERED REVENUE LEDGERS<span class="dot"></span></div>
+      <div class="marquee-item"><strong>BESPOKE ARCHITECTURE</strong><span class="dot"></span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-item"><strong>NATIVE SWIFT 6</strong><span class="dot"></span></div>
+      <div class="marquee-item">JETPACK COMPOSE 2.0<span class="dot"></span></div>
+      <div class="marquee-item"><strong>120 FPS PROMOTION</strong><span class="dot"></span></div>
+      <div class="marquee-item">LOCAL NEURAL ENGINE<span class="dot"></span></div>
+      <div class="marquee-item"><strong>ZERO CLOUD EGRESS</strong><span class="dot"></span></div>
+      <div class="marquee-item">METERED REVENUE LEDGERS<span class="dot"></span></div>
+      <div class="marquee-item"><strong>BESPOKE ARCHITECTURE</strong><span class="dot"></span></div>
     </div>
-  </section>
+  </div>
 
-  <!-- 4. HOW WE WORK -->
-  <section class="section-pad" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">How We Work</span>
-        <h2>A disciplined process, from idea to production.</h2>
-        <p>One clear path, so you always know what happens next — and when.</p>
-      </div>
-      <div class="timeline" data-reveal>
-        <div class="timeline-item"><div class="timeline-dot">1</div><h3>Discovery</h3><p style="max-width:60ch;">We start with your goals, users, and constraints — no assumptions.</p></div>
-        <div class="timeline-item"><div class="timeline-dot">2</div><h3>Proposal</h3><p style="max-width:60ch;">Scope, architecture, timeline, and cost — mapped before a single line of code is written.</p></div>
-        <div class="timeline-item"><div class="timeline-dot">3</div><h3>Design &amp; Build</h3><p style="max-width:60ch;">Interfaces crafted with intention, on clean and maintainable architecture, with regular updates as your product takes shape.</p></div>
-        <div class="timeline-item"><div class="timeline-dot">4</div><h3>Test &amp; Launch</h3><p style="max-width:60ch;">Rigorous QA across devices, platforms, and edge cases, then a controlled release to the app stores.</p></div>
-        <div class="timeline-item"><div class="timeline-dot">5</div><h3>Support</h3><p style="max-width:60ch;">We stay involved well beyond launch day, keeping your product secure, fast, and current.</p></div>
-      </div>
+  <!-- ============================================================
+       SECTION 2: LOCAL LLM APPLICATIONS (INTERACTIVE TERMINAL)
+       ============================================================ -->
+  <section class="tesla-viewport-section" id="local-llm" style="background: var(--bg-secondary);">
+    <div class="tesla-top">
+      <span class="eyebrow" data-reveal>[ On-Device Intelligence ]</span>
+      <h2 data-reveal data-delay="60">
+        Local LLM Applications
+      </h2>
+      <p class="lead" data-reveal data-delay="120">
+        Deploy quantized neural networks directly on user hardware. 100% private, zero API token costs, and instant offline execution via Apple Neural Engine and Qualcomm NPUs.
+      </p>
     </div>
-  </section>
 
-  <!-- 13. FAQ -->
-  <section class="section-pad">
-    <div class="container" style="max-width:820px;">
-      <div class="section-head center" data-reveal>
-        <span class="eyebrow">Frequently Asked</span>
-        <h2>Questions we hear most often.</h2>
-      </div>
-      <div class="accordion" data-reveal>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">What kind of projects do you take on?<span class="plus"></span></button>
-          <div class="accordion-panel"><div class="accordion-panel-inner">We work with individuals, startups, businesses, and enterprise clients across Android, iOS, and web — from MVPs to full-scale platforms.</div></div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">How long does a typical project take?<span class="plus"></span></button>
-          <div class="accordion-panel"><div class="accordion-panel-inner">Timelines vary by scope — a focused MVP may take a few weeks, while enterprise platforms take longer. We provide a clear estimate after discovery.</div></div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">Do you offer post-launch support?<span class="plus"></span></button>
-          <div class="accordion-panel"><div class="accordion-panel-inner">Yes. Every engagement includes maintenance and support options so your product stays reliable long after launch.</div></div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">Can you modernize an existing application?<span class="plus"></span></button>
-          <div class="accordion-panel"><div class="accordion-panel-inner">Absolutely. We regularly rebuild and modernize legacy applications with contemporary architecture and design.</div></div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">How do we get started?<span class="plus"></span></button>
-          <div class="accordion-panel"><div class="accordion-panel-inner">Reach out through our contact page with your project details, and our team will respond with next steps.</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 14. CTA -->
-  <section class="section-pad" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="glass" style="padding:var(--space-2xl) var(--space-lg); text-align:center; position:relative; overflow:hidden;" data-reveal>
-        <div class="hero-mesh" style="opacity:.6;"></div>
-        <div style="position:relative;z-index:1;">
-          <h2 style="font-size:var(--fs-h1);">Let's Build Something Amazing Together.</h2>
-          <p style="color:var(--text-secondary); font-size:var(--fs-lead); max-width:560px; margin:var(--space-md) auto 0;">Tell us about your idea and we'll help you turn it into premium, production-ready software.</p>
-          <div style="margin-top:var(--space-lg);">
-            <span class="magnetic"><a href="contact.html" class="btn btn-primary">Start Your Project</a></span>
+    <!-- Centerpiece: Interactive Neural Terminal Sandbox -->
+    <div class="tesla-center" data-reveal data-delay="180">
+      <div class="neural-terminal tilt-card">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
           </div>
+          <span class="terminal-title">COREML_ONNX_ENGINE // RUNNING ON HARDWARE ACCELERATOR</span>
+          <span class="telemetry-chip" style="padding: 0.2rem 0.6rem; font-size: 0.7rem;">
+            <span class="beacon-dot active-green"></span> NPU Active
+          </span>
+        </div>
+
+        <div class="terminal-prompts">
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary); align-self: center;">Select Scenario:</span>
+          <button class="terminal-prompt-btn active" data-scenario="summary" type="button">01. Offline Medical Summary</button>
+          <button class="terminal-prompt-btn" data-scenario="json" type="button">02. Structured JSON Grammar</button>
+          <button class="terminal-prompt-btn" data-scenario="rag" type="button">03. Local Vector RAG Search</button>
+        </div>
+
+        <div class="terminal-body" id="terminalOutput">
+          <!-- Populated by JavaScript typewriter -->
+        </div>
+
+        <div class="terminal-meta-bar">
+          <div>Inference Speed: <span class="meta-metric" id="tokensSecVal">44.2 t/s</span></div>
+          <div>RAM Footprint: <span class="meta-metric" id="ramFootprintVal">1.42 GB</span></div>
+          <div>Cloud Egress: <span class="meta-metric" id="cloudEgressVal" style="color: #30d158;">0.00 KB (Offline)</span></div>
+          <div>API Billing: <span class="meta-metric" style="color: #30d158;">$0.00 / ∞ Calls</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tesla-bottom" data-reveal data-delay="240">
+      <div class="tesla-actions">
+        <a href="contact.html" class="btn btn-primary">Build Local LLM App</a>
+        <a href="technology.html" class="btn btn-secondary">Review Inference Stack</a>
+      </div>
+      <div class="tesla-specs">
+        <div class="spec-item">
+          <span class="spec-value">$0.00</span>
+          <span class="spec-label">Cloud API Fees</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">100% Private</span>
+          <span class="spec-label">Zero Server Egress</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">40+ t/s</span>
+          <span class="spec-label">Quantized Speed</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">CoreML &amp; ONNX</span>
+          <span class="spec-label">Direct Silicon Run</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Ticker 2 -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item"><strong>HIGH-THROUGHPUT METERING</strong><span class="dot"></span></div>
+      <div class="marquee-item">DYNAMIC TIER ENGINE<span class="dot"></span></div>
+      <div class="marquee-item"><strong>MULTI-CURRENCY FX</strong><span class="dot"></span></div>
+      <div class="marquee-item">STRIPE &amp; ADYEN SYNC<span class="dot"></span></div>
+      <div class="marquee-item"><strong>ZERO FINANCIAL DRIFT</strong><span class="dot"></span></div>
+      <div class="marquee-item">AUDITABLE INVOICE PIPELINES<span class="dot"></span></div>
+      <!-- Duplicate -->
+      <div class="marquee-item"><strong>HIGH-THROUGHPUT METERING</strong><span class="dot"></span></div>
+      <div class="marquee-item">DYNAMIC TIER ENGINE<span class="dot"></span></div>
+      <div class="marquee-item"><strong>MULTI-CURRENCY FX</strong><span class="dot"></span></div>
+      <div class="marquee-item">STRIPE &amp; ADYEN SYNC<span class="dot"></span></div>
+      <div class="marquee-item"><strong>ZERO FINANCIAL DRIFT</strong><span class="dot"></span></div>
+      <div class="marquee-item">AUDITABLE INVOICE PIPELINES<span class="dot"></span></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION 3: CUSTOM BILLING SOLUTIONS (INTERACTIVE PIPELINE)
+       ============================================================ -->
+  <section class="tesla-viewport-section" id="billing">
+    <div class="tesla-top">
+      <span class="eyebrow" data-reveal>[ Billing Infrastructure ]</span>
+      <h2 data-reveal data-delay="60">
+        Custom Billing &amp; Metering Solutions
+      </h2>
+      <p class="lead" data-reveal data-delay="120">
+        High-scale usage metering, dynamic subscription engines, and automated multi-currency tax calculation pipelines engineered for zero reconciliation errors.
+      </p>
+    </div>
+
+    <!-- Centerpiece: Interactive Billing Pipeline -->
+    <div class="tesla-center" data-reveal data-delay="180">
+      <div class="billing-pipeline tilt-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: var(--space-sm);">
+          <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-secondary);">METERED_PIPELINE // EVENT_LEDGER_STREAM</span>
+          <span class="telemetry-chip">
+            <span class="beacon-dot active-green"></span> Stream Active
+          </span>
+        </div>
+
+        <div class="pipeline-diagram">
+          <div class="pipeline-track">
+            <div class="packet-pulse"></div>
+          </div>
+
+          <div class="pipeline-node" id="pnode1">
+            <div class="node-label">01. INGESTION</div>
+            <div class="node-title">Event Collector</div>
+            <div class="node-metric">&gt; 10,000 req/sec</div>
+          </div>
+
+          <div class="pipeline-node" id="pnode2">
+            <div class="node-label">02. METERING</div>
+            <div class="node-title">Sliding Window Aggregator</div>
+            <div class="node-metric">Sub-millisecond State</div>
+          </div>
+
+          <div class="pipeline-node" id="pnode3">
+            <div class="node-label">03. PRICING</div>
+            <div class="node-title">Tier &amp; Currency Engine</div>
+            <div class="node-metric">130+ Currencies</div>
+          </div>
+
+          <div class="pipeline-node" id="pnode4">
+            <div class="node-label">04. SETTLEMENT</div>
+            <div class="node-title">Automated Invoice</div>
+            <div class="node-metric">Stripe / Tax Sync</div>
+          </div>
+        </div>
+
+        <div class="pipeline-actions-row">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary); text-transform: uppercase;">Aggregated Volume:</div>
+            <div class="pipeline-ticker" id="pipelineEventCount">1,489,200 events</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary); text-transform: uppercase;">Audit Reconciliation:</div>
+            <div class="pipeline-ticker" id="pipelineDriftStatus" style="color: #30d158;">0.000% Drift (Verified)</div>
+          </div>
+          <button id="emitEventsBtn" class="btn btn-secondary btn-sm" type="button">
+            + Emit 5,000 Usage Events
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tesla-bottom" data-reveal data-delay="240">
+      <div class="tesla-actions">
+        <a href="contact.html" class="btn btn-primary">Architect Billing System</a>
+        <a href="services.html" class="btn btn-secondary">Review Infrastructure</a>
+      </div>
+      <div class="tesla-specs">
+        <div class="spec-item">
+          <span class="spec-value">10,000/s</span>
+          <span class="spec-label">Event Throughput</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">0.000%</span>
+          <span class="spec-label">Reconciliation Drift</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">Multi-Currency</span>
+          <span class="spec-label">Global Tax &amp; FX</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">SOC-2</span>
+          <span class="spec-label">Audit Compliant</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Ticker 3 -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item"><strong>FULL APP REDESIGN</strong><span class="dot"></span></div>
+      <div class="marquee-item">30X FASTER LAUNCH<span class="dot"></span></div>
+      <div class="marquee-item"><strong>85% RAM REDUCTION</strong><span class="dot"></span></div>
+      <div class="marquee-item">ZERO DOWNTIME MIGRATION<span class="dot"></span></div>
+      <div class="marquee-item"><strong>120 FPS FLUID MOTION</strong><span class="dot"></span></div>
+      <div class="marquee-item">SPAGHETTI CODE TO CLEAN ARCHITECTURE<span class="dot"></span></div>
+      <!-- Duplicate -->
+      <div class="marquee-item"><strong>FULL APP REDESIGN</strong><span class="dot"></span></div>
+      <div class="marquee-item">30X FASTER LAUNCH<span class="dot"></span></div>
+      <div class="marquee-item"><strong>85% RAM REDUCTION</strong><span class="dot"></span></div>
+      <div class="marquee-item">ZERO DOWNTIME MIGRATION<span class="dot"></span></div>
+      <div class="marquee-item"><strong>120 FPS FLUID MOTION</strong><span class="dot"></span></div>
+      <div class="marquee-item">SPAGHETTI CODE TO CLEAN ARCHITECTURE<span class="dot"></span></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION 4: FULL APP REDESIGN (INTERACTIVE SPLIT SLIDER)
+       ============================================================ -->
+  <section class="tesla-viewport-section" id="redesign" style="background: var(--bg-secondary);">
+    <div class="tesla-top">
+      <span class="eyebrow" data-reveal>[ Architectural Overhaul ]</span>
+      <h2 data-reveal data-delay="60">
+        Full Application Redesign &amp; Modernization
+      </h2>
+      <p class="lead" data-reveal data-delay="120">
+        We dismantle sluggish legacy codebases and re-engineer them into ultra-crisp, high-performance applications with modern aesthetics and zero technical debt.
+      </p>
+    </div>
+
+    <!-- Centerpiece: Interactive Draggable Split Slider -->
+    <div class="tesla-center" data-reveal data-delay="180">
+      <div class="split-compare tilt-card">
+        <div class="compare-container">
+          <!-- Left: Legacy App Profile -->
+          <div class="compare-panel legacy">
+            <span class="compare-tag" style="color: #ff453a;">[ Legacy Existing Codebase ]</span>
+            <div class="compare-title">Fragile, Sluggish &amp; High Janky Overhead</div>
+            <div class="compare-metrics-row">
+              <div class="compare-metric-col">
+                <span class="num" style="color: #ff453a;">4.2s</span>
+                <span class="lbl">Cold Start</span>
+              </div>
+              <div class="compare-metric-col">
+                <span class="num" style="color: #ff453a;">148 MB</span>
+                <span class="lbl">Memory Bloat</span>
+              </div>
+              <div class="compare-metric-col">
+                <span class="num" style="color: #ff453a;">32 FPS</span>
+                <span class="lbl">Frame Drops</span>
+              </div>
+              <div class="compare-metric-col">
+                <span class="num" style="color: #ff453a;">92.4%</span>
+                <span class="lbl">Crash Free</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: VKD Rebuilt Profile (Clipped dynamically by slider handle) -->
+          <div class="compare-panel modern">
+            <span class="compare-tag" style="color: #30d158;">[ VKD Re-Engineered Architecture ]</span>
+            <div class="compare-title">Direct-to-Silicon 120 FPS Native Precision</div>
+            <div class="compare-metrics-row">
+              <div class="compare-metric-col">
+                <span class="num" style="color: #30d158;">0.14s</span>
+                <span class="lbl">Instant Launch</span>
+              </div>
+              <div class="compare-metric-col">
+                <span class="num" style="color: #30d158;">22 MB</span>
+                <span class="lbl">RAM Footprint</span>
+              </div>
+              <div class="compare-metric-col">
+                <span class="num" style="color: #30d158;">120 FPS</span>
+                <span class="lbl">Locked ProMotion</span>
+              </div>
+              <div class="compare-metric-col">
+                <span class="num" style="color: #30d158;">99.99%</span>
+                <span class="lbl">Crash Free</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Draggable Slider Handle -->
+          <div class="compare-handle" aria-label="Drag to compare legacy versus modernized code">
+            <div class="compare-handle-knob">&lt; &gt;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tesla-bottom" data-reveal data-delay="240">
+      <div class="tesla-actions">
+        <a href="contact.html" class="btn btn-primary">Modernize Your App</a>
+        <a href="services.html" class="btn btn-secondary">Review Audit Process</a>
+      </div>
+      <div class="tesla-specs">
+        <div class="spec-item">
+          <span class="spec-value">30x</span>
+          <span class="spec-label">Faster Startup</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">85% Less</span>
+          <span class="spec-label">RAM Consumption</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">120 FPS</span>
+          <span class="spec-label">ProMotion Fluidity</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">Zero</span>
+          <span class="spec-label">Downtime Migration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Ticker 4 -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item"><strong>BESPOKE PRODUCT ENGINEERING</strong><span class="dot"></span></div>
+      <div class="marquee-item">100% CLIENT IP TRANSFER<span class="dot"></span></div>
+      <div class="marquee-item"><strong>ANY CUSTOM REQUIREMENT</strong><span class="dot"></span></div>
+      <div class="marquee-item">DIRECT SENIOR ENGINEERS<span class="dot"></span></div>
+      <div class="marquee-item"><strong>ZERO VENDOR LOCK-IN</strong><span class="dot"></span></div>
+      <div class="marquee-item">PRODUCTION HARDENED<span class="dot"></span></div>
+      <!-- Duplicate -->
+      <div class="marquee-item"><strong>BESPOKE PRODUCT ENGINEERING</strong><span class="dot"></span></div>
+      <div class="marquee-item">100% CLIENT IP TRANSFER<span class="dot"></span></div>
+      <div class="marquee-item"><strong>ANY CUSTOM REQUIREMENT</strong><span class="dot"></span></div>
+      <div class="marquee-item">DIRECT SENIOR ENGINEERS<span class="dot"></span></div>
+      <div class="marquee-item"><strong>ZERO VENDOR LOCK-IN</strong><span class="dot"></span></div>
+      <div class="marquee-item">PRODUCTION HARDENED<span class="dot"></span></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION 5: BESPOKE PRODUCT DEVELOPMENT (INTERACTIVE MATRIX)
+       ============================================================ -->
+  <section class="tesla-viewport-section">
+    <div class="tesla-top">
+      <span class="eyebrow" data-reveal>[ Bespoke Engineering ]</span>
+      <h2 data-reveal data-delay="60">
+        Any Product. Built to Your Requirements.
+      </h2>
+      <p class="lead" data-reveal data-delay="120">
+        Have a complex custom software requirement? Toggle required capabilities below to inspect how we assemble production-grade modular architectures tailored to your exact specifications.
+      </p>
+    </div>
+
+    <!-- Centerpiece: Interactive Architecture Stack Matrix -->
+    <div class="tesla-center" data-reveal data-delay="180">
+      <div class="blueprint-matrix tilt-card">
+        <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-secondary); margin-bottom: 0.6rem;">
+          CLICK REQUIREMENTS TO COMPOSE ARCHITECTURE STACK:
+        </div>
+
+        <div class="matrix-chips">
+          <button class="matrix-chip active" data-layer="ui" type="button">✦ Biometric Authentication</button>
+          <button class="matrix-chip active" data-layer="logic" type="button">✦ Local AI Core</button>
+          <button class="matrix-chip" data-layer="sync" type="button">✦ Air-Gapped Offline Sync</button>
+          <button class="matrix-chip active" data-layer="hardware" type="button">✦ BLE Hardware Peripheral</button>
+          <button class="matrix-chip" data-layer="billing" type="button">✦ Metered Usage Engine</button>
+        </div>
+
+        <div class="matrix-stack">
+          <div class="stack-layer highlight" data-layer-type="ui">
+            <span class="layer-name">01. Presentation &amp; Interaction</span>
+            <span class="layer-spec">SwiftUI 6 / Jetpack Compose • FaceID / Fingerprint Cryptographic Prompts</span>
+          </div>
+          <div class="stack-layer highlight" data-layer-type="logic">
+            <span class="layer-name">02. Neural &amp; Domain Engine</span>
+            <span class="layer-spec">Apple Neural Engine CoreML / Kotlin Multiplatform State Machines</span>
+          </div>
+          <div class="stack-layer" data-layer-type="sync">
+            <span class="layer-name">03. Persistence &amp; Cryptographic Vault</span>
+            <span class="layer-spec">Encrypted SQLCipher • CRDT Conflict-Free Replicated State Sync</span>
+          </div>
+          <div class="stack-layer highlight" data-layer-type="hardware">
+            <span class="layer-name">04. Hardware Peripheral Link</span>
+            <span class="layer-spec">CoreBluetooth Low Energy • Low-Latency Peripheral Protocol Buffers</span>
+          </div>
+          <div class="stack-layer" data-layer-type="billing">
+            <span class="layer-name">05. Usage Metering &amp; Ledger Pipeline</span>
+            <span class="layer-spec">High-Throughput Metering • Multi-Currency Ledger • Cryptographic Audit Sync</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tesla-bottom" data-reveal data-delay="240">
+      <div class="tesla-actions">
+        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+        <a href="contact.html" class="btn btn-secondary">Schedule Engineering Call</a>
+      </div>
+      <div class="tesla-specs">
+        <div class="spec-item">
+          <span class="spec-value">100% IP</span>
+          <span class="spec-label">Complete Ownership</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">Zero Lock-in</span>
+          <span class="spec-label">Standard Repositories</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">Direct Access</span>
+          <span class="spec-label">Senior Engineers</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">24-48h</span>
+          <span class="spec-label">Technical Response</span>
         </div>
       </div>
     </div>
@@ -332,29 +666,36 @@
 
 </main>
 
-<!-- Footer -->
+<!-- Tesla-Style Minimalist Footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="brand" style="margin-bottom:var(--space-sm);"><img class="brand-mark" src="assets/icons/logo.png" alt="" width="32" height="32" />VKD Apps</a>
-        <p style="max-width:32ch;">Premium software engineering for Android, iOS, and the web — built in India, for the world.</p>
+        <a href="index.html" class="brand" style="margin-bottom: var(--space-sm);">
+          <img class="brand-mark" src="assets/icons/logo.png" alt="VKD Apps logo" width="26" height="26" />
+          <span>VKD Apps</span>
+        </a>
+        <p style="max-width: 34ch; line-height: 1.6; font-size: 0.9rem;">
+          Specialized software engineering studio. Native iOS &amp; Android apps, on-device Local LLMs, custom billing systems, and complete application redesigns.
+        </p>
       </div>
+
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <a href="#mobile">iOS &amp; Android Apps</a>
+        <a href="#local-llm">Local LLM Applications</a>
+        <a href="#billing">Custom Billing Solutions</a>
+        <a href="#redesign">Full App Redesign</a>
+      </div>
+
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="about.html">About</a>
+        <a href="services.html">Capabilities</a>
         <a href="technology.html">Technology</a>
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="footer-col">
-        <h4>Products</h4>
-        <a href="pickspin.html">PickSpin</a>
-        <a href="brainboost.html">BrainBoost</a>
-        <a href="rent-agreement-maker.html">Rent Agreement Maker</a>
-        <a href="flowcare.html">FlowCare</a>
-      </div>
+
       <div class="footer-col">
         <h4>Legal</h4>
         <a href="privacy-policy.html">Privacy Policy</a>
@@ -363,16 +704,15 @@
         <a href="disclaimer.html">Disclaimer</a>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> VKD Apps. All rights reserved.</span>
-      <div class="footer-social" aria-label="Social links">
-        <a href="mailto:business@vkdapps.com" aria-label="Email">✉</a>
+      <span>&copy; <span data-year>2026</span> VKD Apps. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="mailto:vkdiosapp@gmail.com">vkdiosapp@gmail.com</a>
       </div>
     </div>
   </div>
 </footer>
-
-<button class="back-to-top" aria-label="Back to top">↑</button>
 
 <script src="assets/js/main.js"></script>
 </body>

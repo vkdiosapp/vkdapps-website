@@ -12,7 +12,7 @@
  */
 
 const REQUIRED = ["name", "email", "projectType", "budget", "inquiryType", "message"];
-const DEFAULT_TO = "business@vkdapps.com";
+const DEFAULT_TO = "vkdiosapp@gmail.com";
 
 const json = (data, status) =>
   new Response(JSON.stringify(data), {
